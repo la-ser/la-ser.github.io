@@ -83,6 +83,7 @@ p {
     }
 }
 
+/* PREVIEW */
 .preview {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -91,4 +92,30 @@ p {
     background-color: darkgray;
     color: white;
     font-family: sans-serif;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked+.lbl-toggle+.collapsible-content {
+    max-height: 350px;
+}
+
+/*           -----------------             */
+
+footer {
+    color: white;
+    background-color: rgb(42, 113, 245);
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    bottom: 0;
 }

@@ -3,6 +3,8 @@
     overflow: hidden;
     background-color: rgb(42, 113, 245);
     padding: 20px 10px;
+    position: sticky;
+    top: 0;
 }
 
 .header a {
@@ -14,6 +16,7 @@
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
+    font-weight: bold;
 }
 
 .header a.logo {
@@ -36,6 +39,7 @@
         float: none;
         text-align: center;
         padding: 10 5px;
+        font-weight: normal;
     }
 
     .header-right {
