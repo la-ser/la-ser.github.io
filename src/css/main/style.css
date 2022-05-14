@@ -30,10 +30,18 @@ h1 {
     font-size: 300%;
 }
 
+a {
+    text-decoration: none;
+}
 .hr {
     color: white;
     width: 75%;
     border: double;
+}
+
+.center {
+    display: table;
+    margin: 0 auto;
 }
 
 p {
@@ -41,8 +49,6 @@ p {
     word-break: keep-all;
     width: 60%;
     text-align: center;
-    display: table;
-    margin: 0 auto;
 }
 
 @media (max-width: 1080px) {
