@@ -1,4 +1,30 @@
+@media (max-width: 1080px) {
+    .btn-1 {
+        text-align: center;
+        font-weight: bold;
+        box-sizing: border-box;
+        width: 30%;
+        font-size: 70%;
+        zoom: 1.5;
+    }
+}
+
+@media (max-width: 540px) {
+    .btn-1 {
+        text-align: center;
+        font-weight: bold;
+        box-sizing: border-box;
+        border-radius: 2px;
+        width: 30%;
+        font-size: 40%;
+        zoom: 1.7;
+    }
+}
+
 .btn-1 {
-    padding: 10px 20px;
+    margin-top: 10px;
+    text-align: center;
     font-weight: bold;
+    box-sizing: border-box;
+    width: 30%;
 }
