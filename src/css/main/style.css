@@ -48,7 +48,17 @@ p {
     line-break: strict;
     word-break: keep-all;
     width: 60%;
-    text-align: center;
+    text-align: center; 
+}
+
+p:hover {
+    color: lightgray;
+    /*
+    border-style: solid;
+    border-color: gray;
+    border-width: 2px;
+    border-radius: 10px;
+    */
 }
 
 @media (max-width: 1080px) {
@@ -92,6 +102,7 @@ p {
     background-color: darkgray;
     color: white;
     font-family: sans-serif;
+    cursor: s-resize
 }
 
 input[type='checkbox'] {
