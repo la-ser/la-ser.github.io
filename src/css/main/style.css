@@ -123,6 +123,12 @@ p:hover {
     }
 }
 
+@media (min-width: 1600px) {
+    body {
+        zoom: 1.5;
+    }
+}
+
 /*           -----------------             */
 
 footer {
