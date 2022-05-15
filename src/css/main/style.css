@@ -108,6 +108,14 @@ p:hover {
     iframe {
         zoom: 0.5;
     }
+
+    .tooltip {
+        display: none;
+    }
+
+    .tooltiptext {
+        display: none;
+    }
 }
 
 /*           -----------------             */
