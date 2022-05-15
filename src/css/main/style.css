@@ -120,6 +120,7 @@ p:hover {
     .scrollToTop {
         zoom: 0.7;
         opacity: 0.7;
+        font-size: 270%;
     }
 }
 
