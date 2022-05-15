@@ -52,10 +52,11 @@ p {
     word-break: keep-all;
     width: 60%;
     text-align: center;
+    opacity: 0.8;
 }
 
 p:hover {
-    color: lightgray;
+    opacity: 1;
     /*
     border-style: solid;
     border-color: gray;
@@ -74,6 +75,10 @@ p:hover {
         margin: 0 auto;
         font-family: arial;
         font-size: 120%;
+    }
+
+    p:hover {
+        opacity: 0.8;
     }
 
     ::-webkit-scrollbar {
