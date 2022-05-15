@@ -130,3 +130,7 @@ footer {
     padding-bottom: 2%;
     bottom: 0;
 }
+
+.colorMode {
+    background-color: rgb(18, 57, 131);
+}
