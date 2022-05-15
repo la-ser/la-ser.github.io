@@ -1,2 +1,2 @@
-# laser Inc - Website
+# laser Inc.
 by laser Inc.
