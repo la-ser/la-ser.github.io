@@ -83,6 +83,14 @@ p:hover {
     iframe {
         zoom: 0.7;
     }
+
+    .tooltip {
+        display: none;
+    }
+
+    .tooltiptext {
+        display: none;
+    }
 }
 
 @media (max-width: 540px) {
