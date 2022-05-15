@@ -4,6 +4,8 @@ body {
     padding: 0;
     margin: 0;
     user-select: none;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 /*             Scrollbar             */
@@ -33,6 +35,7 @@ a {
     text-decoration: none;
     font-family: Georgia;
 }
+
 .hr {
     color: white;
     width: 75%;
@@ -48,7 +51,7 @@ p {
     line-break: strict;
     word-break: keep-all;
     width: 60%;
-    text-align: center; 
+    text-align: center;
 }
 
 p:hover {
@@ -72,6 +75,11 @@ p:hover {
         font-family: arial;
         font-size: 120%;
     }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     iframe {
         zoom: 0.7;
     }
@@ -88,35 +96,10 @@ p:hover {
         font-family: arial;
         font-size: 130%;
     }
+
     iframe {
         zoom: 0.5;
     }
-}
-
-/* PREVIEW */
-.preview {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 50%;
-    border-radius: 5px;
-    background-color: darkgray;
-    color: white;
-    font-family: sans-serif;
-    cursor: s-resize
-}
-
-input[type='checkbox'] {
-    display: none;
-}
-
-.collapsible-content {
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height .25s ease-in-out;
-}
-
-.toggle:checked+.lbl-toggle+.collapsible-content {
-    max-height: 350px;
 }
 
 /*           -----------------             */
@@ -133,4 +116,25 @@ footer {
 
 .colorMode {
     background-color: rgb(18, 57, 131);
+}
+
+/* TOOLTIP */
+.tooltip {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tooltip .tooltiptext {
+    display: none;
+}
+
+.tooltip:hover {
+    cursor: pointer;
+}
+
+
+.tooltip:active .tooltiptext {
+    display: block;
 }

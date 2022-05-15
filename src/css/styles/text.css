@@ -1,0 +1,113 @@
+/* White */
+.color-white {
+    color: white;
+}
+
+.bg-color-white {
+    background-color: white;
+}
+
+/* Gray */
+.color-gray {
+    color: gray;
+}
+
+.bg-color-gray {
+    background-color: gray;   
+}
+
+/* Dark Gray */
+
+.color-darkgray {
+    color: rgb(70, 70, 70); 
+}
+
+.bg-color-darkgray {
+    background-color: rgb(70, 70, 70);    
+}
+
+/* Black */
+.color-black {
+    color: black;
+}
+
+.bg-color-black {
+    background-color: black;
+}
+
+/* Brown */
+.color-brown {
+    color: brown;
+}
+
+.bg-color-brown {
+    background-color: brown;
+}
+
+/* Pink */
+.color-pink {
+    color: pink;
+}
+
+.bg-color-pink {
+    background-color: pink;
+}
+
+/* Purple */
+.color-purple {
+    color: purple;
+}
+
+.bg-color-purple {
+    background-color: purple;
+}
+
+/* Blue */
+.color-blue {
+    color: blue;
+}
+
+.bg-color-blue {
+    background-color: blue;
+}
+
+/* Green */
+.color-green {
+    color: green;
+}
+
+.bg-color-green {
+    background-color: green;
+}
+
+/* Yellow */
+.color-yellow {
+    color: yellow;
+}
+
+.bg-color-yellow {
+    background-color: yellow;
+}
+
+/* Orange */
+.color-orange {
+    color: orange;
+}
+
+.bg-color-orange {
+    background-color: orange;
+}
+
+/* Red */
+.color-red {
+    color: red;
+}
+
+.bg-color-red {
+    background-color: red;
+}
+
+/* Bold */
+.text-bold {
+    font-weight: bolder;
+}

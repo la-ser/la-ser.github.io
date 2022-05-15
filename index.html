@@ -8,7 +8,7 @@
     <link rel="icon" href="./src/icons/L.ico" type="image/x-icon">
     <link rel="stylesheet" href="./src/css/main/style.css">
     <link rel="stylesheet" href="./src/css/main/header.css">
-    <link rel="stylesheet" href="./src/css/styles/colors.css">
+    <link rel="stylesheet" href="./src/css/styles/text.css">
     <link rel="stylesheet" href="./src/css/styles/border.css">
     <link rel="stylesheet" href="./src/css/styles/button.css">
 
@@ -35,11 +35,10 @@
     <hr class="hr">
     <a class="center color-gray btn bg-color-white border-round"
         href="https://la-ser.github.io/old/codeEditor/newest">EDITOR</a>
-    <input id="collapsible" class="toggle" type="checkbox"> <label for="collapsible" class="lbl-toggle preview center"
-        style="text-align: center;">Preview</label>
-    <div class="collapsible-content">
-        <iframe style="pointer-events: none;" src="https://la-ser.github.io/old/codeEditor/newest" class="center"
-            width="75%" height="500px"></iframe>
+    <div class="tooltip center color-darkgray text-bold bg-color-gray"
+        style="padding: 2px 5px 2px 5px; border-radius: 5px;">Hold me down
+        <iframe id="iframe" style="overflow: none;" width="800" height="600" class="center tooltiptext"
+            src="https://la-ser.github.io/old/codeEditor/newest"></iframe>
     </div>
     <hr class="hr">
     <p class="color-white center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -58,16 +57,17 @@
     <a class="center color-gray btn bg-color-white border-round" href="#discord">DISCORD</a>
     <hr class="hr">
     <a class="center color-gray btn bg-color-white border-round" href="#websites">Websites</a>
-    <iframe style="overflow: none;" width="800" height="600" class="center"
-        src="https://la-ser.github.io/websites"></iframe>
+    <div class="tooltip center color-darkgray text-bold bg-color-gray"
+        style="padding: 2px 5px 2px 5px; border-radius: 5px;">Hold me down
+        <iframe id="iframe" style="overflow: none;" width="800" height="600" class="center tooltiptext"
+            src="#websites"></iframe>
+    </div>
+    <hr class="hr">
+    <button type="submit" onclick="scrollToTop()">2356</button>
     <footer>
         <p class="center">© 2022 laser Inc. All rights reserved.</p>
     </footer>
 </body>
-<script>
-    function colorMode() {
-        document.body.classList.toggle("colorMode")
-    }
-</script>
+<script src="./src/js/main/script.js"></script>
 
 </html>
