@@ -5,6 +5,7 @@
     padding: 20px 10px;
     position: sticky;
     top: 0;
+    width: 100%;
 }
 
 .header a {
@@ -18,6 +19,7 @@
     border-radius: 4px;
     font-weight: bold;
     color: white;
+    margin-right: 25px;
 }
 
 .header a.logo {
@@ -38,7 +40,7 @@
     .header {
         position: relative;
     }
-    
+
     .header a {
         display: block;
         float: none;
