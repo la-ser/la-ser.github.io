@@ -35,4 +35,10 @@
     font-weight: bold;
     box-sizing: border-box;
     width: 30%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transition: 0.3s;
+    background-color: rgb(210, 253, 255);
 }

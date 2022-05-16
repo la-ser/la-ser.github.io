@@ -8,3 +8,11 @@ function scrollToTop() {
         behavior: 'smooth',
     });
 }
+
+function openNav() {
+    document.getElementById("sidenav-div").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sidenav-div").style.width = "0";
+}
