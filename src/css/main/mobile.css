@@ -1,0 +1,30 @@
+@media (pointer:coarse) {
+    body {
+        background-color: rgb(46, 109, 109);
+    }
+
+    .header {
+        background-color: rgb(34, 71, 71);
+    }
+
+    .sidenav {
+        background-color: rgb(34, 71, 71);
+        border-right: solid rgb(49, 102, 102) 2px;
+    }
+
+    .header a:hover {
+        background-color: rgb(41, 87, 87);
+    }
+
+    .scrollToTop {
+        background-color: rgb(41, 87, 87);
+    }
+
+    footer {
+        background-color: rgb(34, 71, 71);
+    }
+
+    .colorMode {
+        background-color: rgb(28, 128, 128);
+    }
+}
