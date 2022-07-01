@@ -1,4 +1,8 @@
 @media (pointer:coarse) {
+    html {
+        background-color: rgb(46, 109, 109);
+    }
+
     body {
         background-color: rgb(46, 109, 109);
     }
