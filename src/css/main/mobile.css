@@ -31,4 +31,9 @@
     .colorMode {
         background-color: rgb(28, 128, 128);
     }
+
+    .scrollToTop:hover {
+        opacity: 0.5;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    }
 }
