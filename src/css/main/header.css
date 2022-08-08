@@ -60,6 +60,23 @@
     }
 }
 
+.hidden {
+    display: none;
+}
+
+.sidenav-back {
+    background-color: rgba(85, 85, 85, 0.300);
+    height: 100vh;
+    width: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.sidenav-back:hover {
+    cursor: pointer;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
