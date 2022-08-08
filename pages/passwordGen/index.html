@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://la-ser.github.io/icons/L.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>laser - Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="inputBox">
+        <h2 style="text-align: center;">laser - Password Generator</h2>
+        <br>
+        <h3 style="color: rgb(70, 70, 70);">Symbols</h3>
+        <br>
+        <textarea required class="symbols" id="passwSymbols">0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%^&*()_+?><:{}[]</textarea>
+        <br>
+        <br>
+        <h3 style="color: rgb(70, 70, 70);">Length</h3>
+        <input required type="text" value="16" id="passwLength" style="text-align: center;">
+        <input type="text" name="" placeholder="Create Password" id="password" readonly="">
+        <button class="generate" id="btn" onclick="getPassword()">Generate Password</button>
+        <button class="copy" id="btn" onclick="copyPassword()">Copy Password</button>
+    </div>
+
+    <script src="script.js"></script>
+</body></html>
