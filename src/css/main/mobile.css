@@ -1,8 +1,5 @@
-@media (pointer:coarse) {
-    html {
-        background-color: rgb(46, 109, 109);
-    }
-
+/*@media (pointer:coarse) {
+    html,
     body {
         background-color: rgb(46, 109, 109);
     }
@@ -35,5 +32,9 @@
     .scrollToTop:hover {
         opacity: 0.5;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn {
+        background-color: rgb(33, 156, 156);
     }
 }
