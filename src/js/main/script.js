@@ -3,7 +3,8 @@
     window.parent.location.replace("");
 }*/
     function colorMode() {
-        document.body.classList.toggle("colorMode")
+        document.body.classList.toggle("colorMode");
+        document.body.scroll = "10"
     }
 
     function scrollToTop() {
