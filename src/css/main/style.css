@@ -143,12 +143,12 @@ p:hover {
 footer {
     color: white;
     background-color: rgb(42, 113, 245);
-    padding-left: 25%;
-    padding-right: 25%;
     padding-top: 2%;
     padding-bottom: 2%;
     bottom: 0;
     transition: 1s;
+    width: 100%;
+    text-align: center;
 }
 
 .colorMode {
