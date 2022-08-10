@@ -37,4 +37,10 @@
     .btn {
         background-color: rgb(33, 156, 156);
     }
+}*/
+
+@media (pointer:coarse) {
+    .scrollToTop {
+        display: none;
+    }
 }
