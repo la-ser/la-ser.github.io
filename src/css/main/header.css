@@ -138,6 +138,7 @@
 .sidenav a.sec:hover {
     transition: 1s;
     rotate: 0deg;
+    text-decoration: none;
 }
 
 .sidenav a:hover {
