@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, sans-serif;
+    user-select: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2b4a8;
+}
+
+.inputBox {
+    position: relative;
+    width: 450px;
+}
+
+.inputBox input {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border: none;
+    margin: 15px 0 10px;
+    background: transparent;
+    /*    show the ugly outline*/
+    outline: none;
+    padding: 0 20px;
+    font-size: 24px;
+    letter-spacing: 4px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #141850;
+    box-shadow: -4px -4px 10px rgba(250, 229, 223, 1),
+        inset 4px 4px 10px rgba(0, 0, 0, 0.07),
+        inset -4px -4px 10px rgba(250, 229, 223, 1),
+        4px 4px 10px rgba(0, 0, 0, 0.07)
+}
+
+.generate:active {
+    background-color: rgb(47, 194, 79);
+}
+
+.copy:active {
+    background-color: rgb(252, 64, 64);
+}
+
+button {
+    position: relative;
+    cursor: pointer;
+    color: #fae5df;
+    background-color: #303179;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.symbols {
+    background-color: #4a4b9e;
+    width: 100%;
+    height: 70px;
+    font-size: 120%;
+    border-radius: 10px;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 210px;
+    min-height: 70px;
+}
+
+@media (max-width: 1000px) {
+
+    body {
+        background-color: gray;
+    }
+
+}
