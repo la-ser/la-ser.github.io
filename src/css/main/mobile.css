@@ -73,6 +73,7 @@
     }
 
     .header {
+        width: 100%;
         top: -1px;
         display: flex;
         flex-direction: column;
@@ -92,6 +93,7 @@
     }
 
     footer {
+        width: 100%;
         background-color: rgb(35, 100, 70);
     }
 }
