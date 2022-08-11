@@ -9,6 +9,10 @@ body {
     transition: 1s;
 }
 
+.mobile {
+    display: none;
+}
+
 /*             Scrollbar             */
 
 ::-webkit-scrollbar {

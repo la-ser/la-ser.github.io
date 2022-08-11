@@ -40,7 +40,57 @@
 }*/
 
 @media (pointer:coarse) {
+    .mobile {
+        display: block;
+    }
+
     .scrollToTop {
         display: none;
+    }
+
+    html body {
+        background-color: seagreen;
+        padding: 0;
+        margin: 0;
+        user-select: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: 1s;
+    }
+
+    .colorMode {
+        background-color: rgb(40, 80, 70);
+        transition: 1s;
+    }
+
+    .btn {
+        background-color: rgb(80, 150, 80);
+    }
+
+    .btn:hover {
+        background-color: rgb(50, 150, 80);
+        width: 60%;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: rgb(35, 100, 70);
+    }
+
+    .header a:hover {
+        background-color: seagreen;
+        color: rgb(190, 190, 190);
+    }
+
+    .sidenav {
+        background-color: rgb(35, 100, 70);
+        border-right: solid seagreen 2px;
+    }
+
+    footer {
+        background-color: rgb(35, 100, 70);
     }
 }
