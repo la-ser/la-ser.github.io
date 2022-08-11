@@ -96,6 +96,8 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
     z-index: 11;
+    word-break: keep-all;
+    letter-spacing: -1px;
 }
 
 .sidenav a {
@@ -104,11 +106,38 @@
     font-size: 25px;
     color: #818181;
     display: block;
-    transition: 0.3s;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);*/
     transition: 0.7s;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    word-break: keep-all;
 
+}
+
+.sidenav a:hover {
+    transition: 1s;
+    rotate: 3deg;
+    text-decoration: underline;
+}
+
+.sidenav hr {
+    width: 80%;
+    padding: 2px;
+    color: gray;
+    background-color: gray;
+    border: none;
+}
+
+.sidenav a.sec {
+    letter-spacing: 20px;
+    color: rgb(200, 200, 200);
+    padding-top: 0px;
+    padding-bottom: 0;
+}
+
+.sidenav a.sec:hover {
+    transition: 1s;
+    rotate: 0deg;
 }
 
 .sidenav a:hover {
