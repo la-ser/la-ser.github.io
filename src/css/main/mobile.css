@@ -40,7 +40,13 @@
 }*/
 
 @media (pointer:coarse) {
-    .mobile {
+    
+    a.desktop {
+        display: none;
+        background-color: red;
+    }
+
+    a.mobile {
         display: block;
     }
 
