@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  <title>QR Code- laser Inc.</title>
-</head>
-<style>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico"
+      type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>QR Code- laser Inc.</title>
+  </head>
+  <style>
   * {
     padding: 0;
     margin: 0;
@@ -95,19 +96,18 @@
   }
 }
 </style>
-
-<body>
-  <div class="container">
-    <div class="input-form">
-      <input type="text" class="qr-input" placeholder="Enter url or text">
-      <button class="generate-btn">Generate QR Code</button>
+  <body>
+    <div class="container">
+      <div class="input-form">
+        <input type="text" class="qr-input" placeholder="Enter url or text">
+        <button class="generate-btn">Generate QR Code</button>
+      </div>
+      <div class="qr-code">
+        <img class="qr-image">
+      </div>
     </div>
-    <div class="qr-code">
-      <img class="qr-image">
-    </div>
-  </div>
 
-  <script>
+    <script>
     var container = document.querySelector(".container");
     var generateBtn = document.querySelector(".generate-btn");
     var qrInput = document.querySelector(".qr-input");
@@ -124,6 +124,6 @@
       }
     }
   </script>
-</body>
+  </body>
 
 </html>
