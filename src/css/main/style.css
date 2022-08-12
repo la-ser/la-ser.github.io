@@ -6,7 +6,6 @@ html body {
     overflow-x: hidden;
     overflow-y: auto;
     transition: 1s;
-    overflow: hidden;
 }
 
 a.mobile {
