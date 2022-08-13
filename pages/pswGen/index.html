@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+            user-scalable=no">
+    <title>laser - Password Generator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Consolas, sans-serif;
+        user-select: none;
+    }
+
+    body {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        user-select: none;
+    }
+
+    h2 {
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+        color: white;
+    }
+
+    .inputBox {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        transition: .1s;
+    }
+
+    .inputBox input {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        border: none;
+        margin: 5px 0 10px;
+        background: transparent;
+        /*    show the ugly outline*/
+        outline: none;
+        padding: 0 20px;
+        font-size: 24px;
+        letter-spacing: 4px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        color: #141850;
+        box-shadow: -1px -1px 1px gray,
+            inset 1px 1px 1px rgba(0, 0, 0, 0.07),
+            inset -1px -1px 1px gray,
+            1px 1px 1px rgba(0, 0, 0, 0.07)
+    }
+
+    .generate:active {
+        background-color: rgb(47, 194, 79);
+    }
+
+    .copy:active {
+        background-color: rgb(252, 64, 64);
+    }
+
+    button {
+        position: relative;
+        cursor: pointer;
+        color: #fae5df;
+        background-color: #303179;
+        font-size: 24px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .symbols {
+        background-color: #4a4b9e;
+        width: 100%;
+        height: 70px;
+        font-size: 120%;
+        border-radius: 10px;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 210px;
+        min-height: 70px;
+    }
+
+    @media (min-width: 1200px) {
+
+        html,
+        body {
+            zoom: 1.1;
+        }
+    }
+
+    @media (max-width: 300px) {
+
+        html,
+        body {
+            zoom: 0.9;
+        }
+    }
+
+    @media (pointer:coarse) {
+        .symbols {
+            background-color: rgb(30, 94, 57);
+        }
+
+        button {
+            background-color: rgb(30, 94, 57);
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        .generate:active {
+            background-color: green;
+        }
+
+        .copy:active {
+            background-color: green;
+        }
+    }
+</style>
+
+<body>
+    <div class="inputBox">
+        <h2 style="text-align: center;">laser - Password Generator</h2>
+        <br>
+        <h3 style="color: rgb(70, 70, 70);">Symbols</h3>
+        <br>
+        <textarea required class="symbols"
+            id="passwSymbols">0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%^&*()_+?><:{}[]</textarea>
+        <br>
+        <br>
+        <h3 style="color: rgb(70, 70, 70);">Length</h3>
+        <input required type="text" value="16" id="passwLength" style="text-align: center;">
+        <input type="text" name="" placeholder="Create Password" id="password" readonly="">
+        <button class="generate" id="btn" onclick="getPassword()">Generate
+            Password</button>
+        <button class="copy" id="btn" onclick="copyPassword()">Copy Password</button>
+    </div>
+
+    <script>
+        function getPassword() {
+            const chars = document.getElementById("passwSymbols").value;
+
+            //const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%^&*( )_+?><:{}[]'
+
+            let passwordLength = document.getElementById("passwLength").value;
+            let password = "";
+
+            for (let i = 0; i < passwordLength; i++) {
+                let randomNumber = Math.floor(Math.random() * chars.length);
+                password += chars.substring(randomNumber, randomNumber + 1);
+            }
+            document.getElementById('password').value = password;
+        }
+
+        function copyPassword() {
+            /* Get the text field */
+            var copyText = document.getElementById("password");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            //alert("Copied: " + copyText.value);
+
+        }
+    </script>
+</body>
+
+</html>

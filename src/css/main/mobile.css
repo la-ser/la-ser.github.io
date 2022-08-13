@@ -1,0 +1,105 @@
+/*@media (pointer:coarse) {
+    html,
+    body {
+        background-color: rgb(46, 109, 109);
+    }
+
+    .header {
+        background-color: rgb(34, 71, 71);
+    }
+
+    .sidenav {
+        background-color: rgb(34, 71, 71);
+        border-right: solid rgb(49, 102, 102) 2px;
+    }
+
+    .header a:hover {
+        background-color: rgb(41, 87, 87);
+    }
+
+    .scrollToTop {
+        background-color: rgb(41, 87, 87);
+    }
+
+    footer {
+        background-color: rgb(34, 71, 71);
+    }
+
+    .colorMode {
+        background-color: rgb(28, 128, 128);
+    }
+
+    .scrollToTop:hover {
+        opacity: 0.5;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn {
+        background-color: rgb(33, 156, 156);
+    }
+}*/
+
+@media (pointer:coarse) {
+    
+    a.desktop {
+        display: none;
+        background-color: red;
+    }
+
+    a.mobile {
+        display: block;
+    }
+
+    .scrollToTop {
+        display: none;
+    }
+
+    html body {
+        background-color: seagreen;
+        padding: 0;
+        margin: 0;
+        user-select: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: 1s;
+    }
+
+    .colorMode {
+        background-color: rgb(40, 80, 70);
+        transition: 1s;
+    }
+
+    .btn {
+        background-color: rgb(80, 150, 80);
+    }
+
+    .btn:hover {
+        background-color: rgb(50, 150, 80);
+        width: 60%;
+    }
+
+    .header {
+        width: 100%;
+        top: -1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: rgb(35, 100, 70);
+    }
+
+    .header a:hover {
+        background-color: seagreen;
+        color: rgb(190, 190, 190);
+    }
+
+    .sidenav {
+        background-color: rgb(35, 100, 70);
+        border-right: solid seagreen 2px;
+    }
+
+    footer {
+        width: 100%;
+        background-color: rgb(35, 100, 70);
+    }
+}
