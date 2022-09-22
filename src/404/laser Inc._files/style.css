@@ -1,0 +1,102 @@
+html,
+body {
+    background-color: cornflowerblue;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+/*             Scrollbar             */
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(76, 131, 233);
+    border-radius: 10px;
+}
+
+/*       --------------------        */
+h1 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 300%;
+}
+
+a {
+    text-decoration: none;
+    font-family: Georgia;
+}
+.hr {
+    color: white;
+    width: 75%;
+    border: double;
+}
+
+.center {
+    display: table;
+    margin: 0 auto;
+}
+
+p {
+    line-break: strict;
+    word-break: keep-all;
+    width: 60%;
+    text-align: center;
+}
+
+@media (max-width: 1080px) {
+    p {
+        line-break: strict;
+        word-break: keep-all;
+        width: 80%;
+        text-align: center;
+        display: table;
+        margin: 0 auto;
+        font-family: arial;
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 540px) {
+    p {
+        line-break: strict;
+        word-break: keep-all;
+        width: 80%;
+        text-align: center;
+        display: table;
+        margin: 0 auto;
+        font-family: arial;
+        font-size: 80%;
+    }
+}
+
+.container {
+    display: flex;
+}
+
+.item1 {
+    order: 1;
+}
+
+.item2 {
+    order: 2;
+}
+
+.item3 {
+    order: 3;
+}
+
+.item4 {
+    order: 4;
+}
+
+.item5 {
+    order: 5;
+}
