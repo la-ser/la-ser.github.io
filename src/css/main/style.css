@@ -148,6 +148,7 @@ footer {
     background-color: var(--footer-bg);
     padding-top: 2%;
     padding-bottom: 2%;
+    padding-right: 100%;
     bottom: 0;
     transition: 1s;
     width: 100%;
