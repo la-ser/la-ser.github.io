@@ -230,6 +230,7 @@ footer {
 
 .back-to-top:hover {
     opacity: 60%;
+    cursor: pointer;
 }
 
 .about {
