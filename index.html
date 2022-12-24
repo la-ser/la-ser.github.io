@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
             user-scalable=0">
-    <link rel="icon" href="./src/icons/L.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./src/css/all.css">
+    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://la-ser.github.io/src/css/all.css">
 
     <title>laser Inc.</title>
 </head>
 <style>
+    *:focus {
+        outline: none;
+    }
+
     /*@media only screen and (orientation: landscape) {
         body {
             background-color: rgb(76, 129, 226);
@@ -22,7 +26,7 @@
         filter: grayscale(100%);
         -webkit-filter: grayscale(100%);
     }
-    
+
     .dwn-btn {
         background-color: rgb(190, 190, 190);
         padding: 10px 25%;
@@ -41,6 +45,70 @@
         color: white;
     }
 </style>
+<style>
+    /* Add some styling to the page */
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+        user-select: none;
+    }
+
+    /* Style the download button */
+    .download-button {
+        margin: 10px;
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+        cursor: pointer;
+        background-color: rgba(128, 128, 128, 0.336);
+    }
+
+    .download-button:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    /* Style the select element */
+    .files-select {
+        overflow-y: hidden;
+        display: block;
+        border: none;
+        font-size: 1em;
+        padding: 0px 0px;
+        margin: 0;
+        margin-top: 10px;
+        background-color: rgb(102, 102, 102);
+    }
+
+    /* Style the select options */
+    .files-select option {
+        font-size: 1em;
+        padding: 0px 80px;
+        color: white;
+        font-family: sans-serif;
+        border: none;
+    }
+
+    .files-select option:hover {
+        background-color: rgb(80, 80, 80);
+        border: none;
+    }
+
+    .files-select option:active {
+        background-color: red;
+        border: none;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+
 <body>
 
     <div id="sidenav-div" class="sidenav">
@@ -69,14 +137,24 @@
             <a href="#more" class="icon">&#x1F4C1;</a>
             <a href="#about" class="icon">📙</a>
             <a class="darkMode icon hidden" onclick="colorMode()">⚪</a>
-            
+
         </div>
     </div>
 
-    <a class="center dwn-btn" href="https://www.dropbox.com/s/xgsr14crkul86ku/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">Minecraft Datapack NORMAL</a>
-    <br>
-    <a class="center dwn-btn" href="https://www.dropbox.com/s/lrho7stm54bht1i/laser%20DP%20-%20TEMPLATE%201.19.2%20-%20EMPTY.zip?dl=1">Minecraft Datapack EMPTY</a>
-    <hr class="hr">
+    <center>
+        <div id="download-hide" class="hide">
+        <select multiple class="files-select" id="files-select">
+            <option value="https://www.dropbox.com/s/xgsr14crkul86ku/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">Normal Datapack</option>
+            <option value="https://www.dropbox.com/s/lrho7stm54bht1i/laser%20DP%20-%20TEMPLATE%201.19.2%20-%20EMPTY.zip?dl=1">Empty Datapack</option>
+            <option value="">N/A</option>
+            <option value="">N/A</option>
+        </select>
+        <!-- Add a download button to start the download -->
+        <a href="#" class="download-button" id="download-button">Download</a>
+    </div>
+    </center>
+
+    <hr class="hr" onclick="show()">
     <h1 id="home" class="color-white">Home</h1>
     <hr class="hr">
     <p class="color-white center">This web site is a project which I
@@ -154,5 +232,29 @@
 </body>
 <div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>
 <script src="./src/js/main/script.js"></script>
+<script>
+    // Add an event listener to the download button
+    document.getElementById('download-button').addEventListener('click', e => {
+        e.preventDefault();
+        // Get the selected files
+        const filesSelect = document.getElementById('files-select');
+        const selectedFiles = Array.from(filesSelect.selectedOptions).map(option => option.value);
+        // Download the selected files
+        selectedFiles.forEach(file => {
+            const link = document.createElement('a');
+            link.href = file;
+            link.download = file;
+            link.click();
+        });
+    });
+
+    //hide download
+    var p = document.getElementById("download-hide");
+
+    function show() {
+        //alert("hey");
+        p.classList.toggle('hide');
+    }
+</script>
 
 </html>
