@@ -15,12 +15,12 @@ function colorMode() {
 
 function openNav() {
     document.getElementById("sidenav-div").style.width = "250px";
-    document.getElementById("sidenav-back").classList.remove("hidden")
+    document.getElementById("sidenav-back").classList.toggle("hidden")
 }
 
 function closeNav() {
     document.getElementById("sidenav-div").style.width = "0";
-    document.getElementById("sidenav-back").classList.add("hidden")
+    document.getElementById("sidenav-back").classList.toggle("hidden")
 }
 
 /* Scroll to Top */
