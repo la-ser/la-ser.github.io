@@ -1,4 +1,5 @@
 {
     "discord": "#discord",
-    "arda": "./arda/"
+    "arda": "./arda/",
+    "err": "#404"
 }
