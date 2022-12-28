@@ -22,9 +22,32 @@
             background-color: rgb(76, 129, 226);
         }
     }*/
+
+     /* TOAST */
+     #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: rgba(36, 36, 36, 0.75);
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 12px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 15px;
+        font-size: 17px;
+    }
+
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 1s, fadeout 1s 1.5s;
+        animation: fadein 1s, fadeout 1s 1.5s;
+    }
 </style>
 
-<body onload="loadlinks()">
+<body onload="loadlinks(),toast()">
 
     <div id="sidenav-div" class="sidenav">
         <a class="closebtn" onclick="closeNav()"></a>
@@ -119,6 +142,7 @@
         duo dolores et ea rebum. Stet clita kasd
         gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     <hr class="hr">
+    <div id="snackbar">NEW | Arda`s creations <a style="color: red;" id="link-popup" href="#">Click</a></div>
     <footer>
         <p class="center">© 2022 laser Inc.</p>
     </footer>
@@ -128,5 +152,11 @@
 <script src="./src/js/main/script.js"></script>
 <script src="./src/js/script/download.js"></script>
 <script src="./src/js/script/links.js"></script>
-
+<script>
+    function toast() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 10000);
+    }
+</script>
 </html>

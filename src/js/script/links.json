@@ -1,5 +1,6 @@
 {
     "discord": "#discord",
     "arda": "./arda/",
+    "popup": "./arda/",
     "err": "#404"
 }
