@@ -12,3 +12,6 @@
 @import url('styles/text.css');
 /* IMPORT MOBILE CSS FILE */
 @import url('main/mobile.css');
+
+/* IMPORT DOWNLOAD CSS ASSETS */
+@import url('styles/download.css');

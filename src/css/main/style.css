@@ -44,7 +44,7 @@ a {
 
 .hr {
     color: var(--hr-color);
-    width: 75%;
+    width: 60%;
     border: double;
 }
 

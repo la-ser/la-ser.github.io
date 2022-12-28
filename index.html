@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
             user-scalable=0">
     <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://la-ser.github.io/src/css/all.css">
+    <link rel="stylesheet" href="./src/css/all.css">
 
-    <title>laser Inc.</title>
+    <title>laser Inc. | Home</title>
 </head>
 <style>
+
     *:focus {
         outline: none;
     }
@@ -21,104 +22,18 @@
             background-color: rgb(76, 129, 226);
         }
     }*/
-
-    .icon {
-        filter: grayscale(100%);
-        -webkit-filter: grayscale(100%);
-    }
-
-    .dwn-btn {
-        background-color: rgb(190, 190, 190);
-        padding: 10px 25%;
-        margin-top: 10px;
-        font-family: serif;
-        font-size: 200%;
-        color: rgb(77, 77, 77)
-    }
-
-    .dwn-btn:hover {
-        background-color: rgba(190, 190, 190, 0.75);
-        padding: 10px 25%;
-        margin-top: 10px;
-        font-family: serif;
-        font-size: 200%;
-        color: white;
-    }
-</style>
-<style>
-    /* Add some styling to the page */
-    body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 20px;
-        user-select: none;
-    }
-
-    /* Style the download button */
-    .download-button {
-        margin: 10px;
-        display: inline-block;
-        padding: 10px 20px;
-        border: 1px solid #333;
-        border-radius: 4px;
-        color: #333;
-        text-decoration: none;
-        transition: background-color 0.2s, color 0.2s;
-        cursor: pointer;
-        background-color: rgba(128, 128, 128, 0.336);
-    }
-
-    .download-button:hover {
-        background-color: #333;
-        color: #fff;
-    }
-
-    /* Style the select element */
-    .files-select {
-        display: block;
-        border: none;
-        font-size: 1em;
-        padding: 0px 0px;
-        margin: 0;
-        margin-top: 10px;
-        background-color: rgb(102, 102, 102);
-    }
-
-    /* Style the select options */
-    .files-select option {
-        font-size: 1em;
-        padding: 0px 80px;
-        color: white;
-        font-family: sans-serif;
-        border: none;
-        text-align: center;
-    }
-
-    .files-select option:hover {
-        background-color: rgb(80, 80, 80);
-        border: none;
-    }
-
-    .files-select option:active {
-        background-color: red;
-        border: none;
-    }
-
-    .hide {
-        display: none;
-    }
 </style>
 
-<body>
+<body onload="loadlinks()">
 
     <div id="sidenav-div" class="sidenav">
         <a class="closebtn" onclick="closeNav()"></a>
-        <hr class="hr">
+        <!--<hr class="hr">
         <a href="#more">More</a>
         <hr class="hr">
         <a href="#about">About</a>
         <hr class="hr">
-        <!--<a class="sec">Pages</a>
+        <a class="sec">Pages</a>
         <hr class="hr">
         <a href="#download">Download</a>
         <hr class="hr">
@@ -156,7 +71,7 @@
     </center>
 
     <hr class="hr" onclick="show()">
-    <h1 id="home" class="color-white">Home</h1>
+    <h1 id="home" class="color-white">— Home —</h1>
     <hr class="hr">
     <p class="color-white center">This web site is a project which I
         continue to lead and maintain for educational reasons.
@@ -166,12 +81,12 @@
         try out everything that is possible for me with html, css and
         javascript.</p>
     <hr class="hr">
-    <a class="center btn" href="https://la-ser.github.io/old/codeEditor/newest">EDITOR</a>
-    <div class="tooltip center color-darkgray text-bold bg-color-gray"
+    <a class="center btn" href="https://la-ser.github.io/old/codeEditor/newest">CODE-EDITOR</a>
+    <!--<div class="tooltip center color-darkgray text-bold bg-color-gray"
         style="padding: 2px 5px 2px 5px; border-radius: 5px;">Preview
         <iframe id="iframe" style="overflow: none;" width="800" height="600" class="center tooltiptext"
             src="https://la-ser.github.io/placeholder"></iframe>
-    </div>
+    </div>-->
     <hr class="hr">
     <p class="color-white center">Lorem ipsum dolor sit amet, consetetur
         sadipscing elitr, sed diam nonumy eirmod tempor
@@ -185,21 +100,10 @@
         duo dolores et ea rebum. Stet clita kasd
         gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     <hr class="hr">
-    <a class="center btn" href="https://la-ser.github.io/editor">Download
-        Editor</a>
-    <p class="color-white center">In order to be able to use the codeEditor
-        offline as well, you can now download it as
-        a file for free.</p>
-    <hr class="hr">
-    <a class="center btn" href="#more">MORE</a>
-    <a class="center btn" href="#discord">DISCORD</a>
-    <hr class="hr">
-    <a class="center btn" href="#websites">Websites</a>
-    <div class="tooltip center color-darkgray text-bold bg-color-gray"
-        style="padding: 2px 5px 2px 5px; border-radius: 5px;">Preview
-        <iframe id="iframe" style="overflow: none;" width="800" height="600" class="center tooltiptext"
-            src="https://la-ser.github.io/websitesalt"></iframe>
-    </div>
+    <h1 id="about" class="about center color-white">Links</h1>
+    <a class="center btn" href="#" id="link-discord">Join my Discord</a>
+    <a class="center btn" href="#" id="link-arda">Stuff made by Arda</a>
+    <a class="center btn" href="#404">N/A</a>
     <hr class="hr">
     <h1 id="about" class="about center color-white">About</h1>
     <hr class="hr">
@@ -215,47 +119,14 @@
         duo dolores et ea rebum. Stet clita kasd
         gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     <hr class="hr">
-    <!--<div id="qr-code" class="qr">
-            <iframe
-                src="https://la-ser.github.io/pages/qr/"
-                class="qr-iframe"></iframe>
-        </div>
-        <hr class="hr">
-        <div id="pswGen" class="pswGen">
-            <iframe
-                src="https://la-ser.github.io/pages/pswGen/"
-                class="pswGen-iframe"></iframe>
-        </div>-->
     <footer>
         <p class="center">© 2022 laser Inc.</p>
     </footer>
     <a class="back-to-top hidden" onclick="scrollToTop()">↑</a>
 </body>
-<div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>
+<!--<div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>-->
 <script src="./src/js/main/script.js"></script>
-<script>
-    // Add an event listener to the download button
-    document.getElementById('download-button').addEventListener('click', e => {
-        e.preventDefault();
-        // Get the selected files
-        const filesSelect = document.getElementById('files-select');
-        const selectedFiles = Array.from(filesSelect.selectedOptions).map(option => option.value);
-        // Download the selected files
-        selectedFiles.forEach(file => {
-            const link = document.createElement('a');
-            link.href = file;
-            link.download = file;
-            link.click();
-        });
-    });
-
-    //hide download
-    var p = document.getElementById("download-hide");
-
-    function show() {
-        //alert("hey");
-        p.classList.toggle('hide');
-    }
-</script>
+<script src="./src/js/script/download.js"></script>
+<script src="./src/js/script/links.js"></script>
 
 </html>

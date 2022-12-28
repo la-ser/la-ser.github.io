@@ -28,3 +28,28 @@
     --mobile-btn-bg-hover: rgb(49, 49, 49);
     --mobile-footer-bg: rgb(58, 58, 58);
 }
+
+/* GRAY FILTER */
+
+.icon {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.dwn-btn {
+    background-color: rgb(190, 190, 190);
+    padding: 10px 25%;
+    margin-top: 10px;
+    font-family: serif;
+    font-size: 200%;
+    color: rgb(77, 77, 77)
+}
+
+.dwn-btn:hover {
+    background-color: rgba(190, 190, 190, 0.75);
+    padding: 10px 25%;
+    margin-top: 10px;
+    font-family: serif;
+    font-size: 200%;
+    color: white;
+}

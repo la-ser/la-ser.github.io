@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://la-ser.github.io/src/css/all.css">
+    <title>✔️</title>
+</head>
+<style>
+    .log {
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 120%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+</style>
+
+<body>
+    <h1>Test web page!!</h1>
+    <div class="log">
+    <a>VERSION<a id="version"></a></a><br>
+    <a>NAME<a id="updatename"></a></a><br>
+    <a>Whats new<a id="new"></a></a><br>
+    <hr class="hr">
+    <a>Added<a id="add"></a></a><br>
+    <hr class="hr">
+    <a>Fixed<a id="fix"></a></a><br>
+    <hr class="hr">
+    <a>Removed<a id="rem"></a></a><br>
+</div>
+    <hr class="hr">
+    <script>
+        fetch("test.json")
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('#updatename').innerHTML = data.CURR.updatename
+                document.querySelector('#version').innerHTML = data.CURR.version
+                document.querySelector('#new').innerHTML = data.CURR.new
+                //added
+                document.querySelector('#add').innerHTML = data.CURR.added
+                //fixed
+                document.querySelector('#rem').innerHTML = data.CURR.fixed
+                //removed
+                document.querySelector('#fix').innerHTML = data.CURR.removed
+                
+            })
+    </script>
+</body>
+
+</html>
