@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #36393F;
+        user-select: none;
+    }
+
+    #cookie-display {
+        width: 256px;
+        height: 256px;
+        position: absolute;
+        left: -128px;
+        top: -128px;
+        background: url(https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png);
+        background-size: 256px 256px;
+        cursor: pointer;
+        border-radius: 128px;
+        border: none;
+        /* overflow: hidden; */
+        outline: none;
+        font-size: 300%;
+        color: white;
+        font-family: cursive;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+    }
+
+    #cookie-display:hover {
+        zoom: 1.1;
+    }
+
+    #cookie-display:active {
+        zoom: 1.15;
+    }
+</style>
+
+<body>
+    <button class="btn" onclick="deleteCookies()">Delete Data</button>
+    <button class="btn" onclick="saveClicks()">Save Data</button>
+    <button class="btn" onclick="checkCookie()">Load Data</button>
+    <div id="cookie-display"></div>
+</body>
+
+</html>
+<script>
+
+    var cookieDISPLAY = document.getElementById('cookie-disply');
+    var cookieDATA = document.createElement('div');
+    cookieDATA.innerHTML = '<button id="cookie">0</button>';
+    cookieDATA.style.position = 'absolute';
+    cookieDATA.style.top = '50%';
+    cookieDATA.style.left = '50%';
+    cookieDATA.style.transform = 'translate(-50%, -50%)';
+    cookieDATA.style.zIndex = '1'
+    document.body.appendChild(cookieDATA);
+    var clicks = 0;
+    var clicker = document.getElementById('cookie-display');
+    clicker.onclick = function () {
+        clicks = clicks + 1;
+        var clickerDisplay = document.getElementById('cookie');
+        clickerDisplay.innerHTML = clicks;
+
+        clicker.innerHTML = clickerDisplay.innerHTML
+    };
+
+    /* COOKIES */
+    function setCookie(cname, cvalue) {
+        document.cookie = cname + "=" + cvalue + ";";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        var cookieDISPLAY = document.getElementById('cookie-display');
+        var clicker = document.getElementById('cookie');
+        clicks = clicker.innerHTML;
+        clicks = Math.floor(clicks);
+
+        let clicksSAVED = getCookie("clicks");
+        if (clicksSAVED != "") {
+            alert("Save Loaded! | Your Cookies: " + clicksSAVED);
+            clicks = clicksSAVED;
+            clicks = Math.floor(clicks);
+
+            clicker.innerHTML = clicks;
+            cookieDISPLAY.innerHTML = clicks;
+        } else {
+            clicksSAVED = prompt("Please enter your Cookies:", clicks);
+            if (clicksSAVED != "" && clicksSAVED != null) {
+                setCookie("clicks", clicksSAVED, 30);
+                checkCookie();
+            }
+        }
+    }
+
+    function deleteCookies() {
+        document.cookie = "clicks=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    function saveClicks() {
+        clicks = Math.floor(clicks);
+        alert("Cookies saved: " + clicks)
+        setCookie("clicks", clicks, 30);
+    }
+</script>
