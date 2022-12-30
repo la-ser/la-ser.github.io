@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document 1</title>
+    <title>Document</title>
 </head>
 <style>
     body {
@@ -47,7 +47,7 @@
 </style>
 
 <body>
-    <button class="btn" onclick="deleteCookies()">Delete Dat1a</button>
+    <button class="btn" onclick="deleteCookies()">Delete Data</button>
     <button class="btn" onclick="saveClicks()">Save Data</button>
     <button class="btn" onclick="checkCookie()">Load Data</button>
     <div id="cookie-display"></div>
@@ -114,6 +114,7 @@
             clicksSAVED = prompt("Please enter your Cookies:", clicks);
             if (clicksSAVED != "" && clicksSAVED != null) {
                 setCookie("clicks", clicksSAVED, 30);
+                clicks = clicksSAVED;
                 saveClicks()
                 checkCookie();
             }
