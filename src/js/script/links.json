@@ -1,6 +1,6 @@
 {
     "discord": "#discord",
     "arda": "./arda/",
-    "popup": "./arda/",
+    "popup": "./cookie/",
     "err": "#404"
 }
