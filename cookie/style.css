@@ -43,6 +43,8 @@ body {
 .btn {
     padding: 10px 20px;
     margin: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
     z-index: 20;
     border-radius: 0px;
     border: none;
@@ -64,4 +66,50 @@ body {
 
 .btn-load:active {
     background-color: rgb(0, 110, 255)
+}
+
+@media (max-width: 800px) {
+    body {
+        background-color: red;
+    }
+
+    #cookie-display {
+        margin-top: 50px;
+        zoom: 0.7;
+    }
+
+    #cookie-display:hover {
+        zoom: 0.75;
+    }
+
+    .btn {
+        padding: 5px;
+        margin: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: -5px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background-color: blue;
+    }
+
+    #cookie-display {
+        margin-top: 70px;
+        zoom: 0.5;
+    }
+
+    #cookie-display:hover {
+        zoom: 0.55;
+    }
+
+    .btn {
+        padding: 5px;
+        margin: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: -5px;
+    }
 }

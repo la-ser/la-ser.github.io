@@ -1,6 +1,6 @@
 var perClick = 1;
-var perClickUpgradeCost = 10;
 var perClickDiv = document.getElementById('per-click');
+perClickDiv.innerHTML = perClick+" per Click"
 
 var cookieDISPLAY = document.getElementById('cookie-disply');
 var cookieDATA = document.createElement('div');
@@ -12,7 +12,6 @@ cookieDATA.style.transform = 'translate(-50%, -50%)';
 cookieDATA.style.zIndex = '1'
 document.body.appendChild(cookieDATA);
 var clicks = 0;
-clicks = Math.round(clicks)
 var clicker = document.getElementById('cookie-display');
 clicker.onclick = function () {
     clicks = clicks + perClick;
@@ -77,29 +76,4 @@ function saveClicks() {
     clicks = Math.floor(clicks);
     alert("Cookies saved: " + clicks)
     setCookie("clicks", clicks, 30);
-}
-
-function upgradeClicks() {
-    if (clicks >= perClickUpgradeCost) {
-        perClick++;
-        perClickDiv.innerHTML = perClick + " per Click"
-        clicks = clicks - perClickUpgradeCost
-        clicker.innerHTML = clicks;
-
-        perClickUpgradeCost = Math.round(perClickUpgradeCost)
-        perClickUpgradeCostHALF = perClickUpgradeCost / 2.5;
-        perClickUpgradeCost = perClickUpgradeCost + perClickUpgradeCostHALF;
-    }
-};
-
-function onClick() {
-    /* Set Text */
-    perClickUpgradeCost = Math.round(perClickUpgradeCost)
-    perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!"
-
-    var autoUpgradeCheckBox = document.getElementById("auto-upgrade");
-    
-    if (autoUpgradeCheckBox.checked) {
-        upgradeClicks()
-    } else return;
 }

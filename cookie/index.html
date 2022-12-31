@@ -13,13 +13,44 @@
     * {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
+
+    #per-click {
+        position: absolute;
+        margin-top: 70px;
+        color: white;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    #upgrade-clicks {
+        padding: 10px 20px;
+        background-color: gray;
+        border: none;
+    }
+
+    /* #auto-upgrade {
+        height: 40px;
+        width: 40px;
+        background-color: red;
+        margin: 0;
+    } */
+
+    #upgrade {
+        position: absolute;
+        margin-top: 120px;
+    }
 </style>
 
-<body>
+<body onclick="onClick()">
     <div class="buttons">
         <button class="btn btn-delete" onclick="deleteCookies()">Delete Data</button>
         <button class="btn btn-save" onclick="saveClicks()">Save Data</button>
         <button class="btn btn-load" onclick="checkCookie()">Load Data</button>
+        <a id="per-click">—————</a>
+        <div id="upgrade">
+            
+            <button id="upgrade-clicks" onclick="upgradeClicks()"><input type="checkbox" id="auto-upgrade">UPGRADE</button>
+        </div>
     </div>
     <div id="cookie-display"></div>
 </body>
