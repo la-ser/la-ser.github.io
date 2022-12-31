@@ -4,161 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
-            user-scalable=0">
-    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./src/css/all.css">
-
-    <title>laser Inc. | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>laser Inc. | Cookies</title>
 </head>
 <style>
-
-    *:focus {
-        outline: none;
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
-    /*@media only screen and (orientation: landscape) {
-        body {
-            background-color: rgb(76, 129, 226);
-        }
-    }*/
-
-     /* TOAST */
-     #snackbar {
-        visibility: hidden;
-        min-width: 250px;
-        margin-left: -125px;
-        background-color: rgba(36, 36, 36, 0.75);
-        color: #fff;
+    #per-click {
+        position: absolute;
+        margin-top: 70px;
+        color: white;
+        font-size: xx-large;
         text-align: center;
-        border-radius: 2px;
-        padding: 12px;
-        position: fixed;
-        z-index: 1;
-        left: 50%;
-        bottom: 15px;
-        font-size: 17px;
     }
 
-    #snackbar.show {
-        visibility: visible;
-        -webkit-animation: fadein 1s, fadeout 1s 1.5s;
-        animation: fadein 1s, fadeout 1s 1.5s;
+    #upgrade-clicks {
+        padding: 10px 20px;
+        background-color: gray;
+        border: none;
+    }
+
+    /* #auto-upgrade {
+        height: 40px;
+        width: 40px;
+        background-color: red;
+        margin: 0;
+    } */
+
+    #upgrade {
+        position: absolute;
+        margin-top: 120px;
+    }
+
+    #version {
+        color: white;
+        font-weight: bold;
     }
 </style>
 
-<body onload="loadlinks(),toast()">
-
-    <div id="sidenav-div" class="sidenav">
-        <a class="closebtn" onclick="closeNav()"></a>
-        <!--<hr class="hr">
-        <a href="#more">More</a>
-        <hr class="hr">
-        <a href="#about">About</a>
-        <hr class="hr">
-        <a class="sec">Pages</a>
-        <hr class="hr">
-        <a href="#download">Download</a>
-        <hr class="hr">
-        <a href="https://la-ser.github.io/old/codeEditor/newest">codeEditor</a>
-        <hr class="hr">
-        <a href="#pswGen">passwordGen</a>
-        <hr class="hr">
-        <a href="#qr-code">QR-Code</a>-->
-    </div>
-    <div class="header">
-        <a onclick="openNav()" class="logo"><span onclick="openNav()">☰
-                laser Inc.</span></a>
-        <div class="header-right">
-            <!--<a href="#mobile" class="mobile">Mobile</a>-->
-            <a href="#desktop" class="desktop icon">🖥️</a>
-            <a href="#more" class="icon">&#x1F4C1;</a>
-            <a href="#about" class="icon">📙</a>
-            <a class="darkMode icon hidden" onclick="colorMode()">⚪</a>
-
+<body onclick="onClick(),loadlinks()">
+    <a id="version">V.1</a>
+    <div class="buttons">
+        <button class="btn btn-delete" onclick="deleteCookies()">Delete Data</button>
+        <button class="btn btn-save" onclick="saveClicks()">Save Data</button>
+        <button class="btn btn-load" onclick="checkCookie()">Load Data</button>
+        <a id="per-click"></a>
+        <div id="upgrade">
+            <button id="upgrade-clicks" onclick="upgradeClicks()">
+            <input type="checkbox" id="auto-upgrade">UPGRADE</button>
         </div>
     </div>
-
-    <center>
-        <div id="download-hide" class="hide">
-        <select multiple class="files-select" id="files-select">
-            <option id="download-1" value="https://www.dropbox.com/s/c3aw8a1mijwm25k/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">Normal Datapack</option>
-            <option id="download-2" value="https://www.dropbox.com/s/lrho7stm54bht1i/laser%20DP%20-%20TEMPLATE%201.19.2%20-%20EMPTY.zip?dl=1">Empty Datapack</option>
-            <option id="download-3" value="">N/A</option>
-            <option id="download-4" value="">N/A</option>
-            <option id="download-5" value="">N/A</option>
-        </select>
-        <!-- Add a download button to start the download -->
-        <a href="#" class="download-button" id="download-button">Download</a>
-    </div>
-    </center>
-
-    <hr class="hr" onclick="show()">
-    <h1 id="home" class="color-white">— Home —</h1>
-    <hr class="hr">
-    <p class="color-white center">This web site is a project which I
-        continue to lead and maintain for educational reasons.
-        This website (with many other features) will be renewed and improved
-        from time to time.
-        With this project I would like to educate myself further and simply
-        try out everything that is possible for me with html, css and
-        javascript.</p>
-    <hr class="hr">
-    <a class="center btn" href="https://la-ser.github.io/old/codeEditor/newest">CODE-EDITOR</a>
-    <!--<div class="tooltip center color-darkgray text-bold bg-color-gray"
-        style="padding: 2px 5px 2px 5px; border-radius: 5px;">Preview
-        <iframe id="iframe" style="overflow: none;" width="800" height="600" class="center tooltiptext"
-            src="https://la-ser.github.io/placeholder"></iframe>
-    </div>-->
-    <hr class="hr">
-    <p class="color-white center">Lorem ipsum dolor sit amet, consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. Lorem ipsum
-        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-        duo dolores et ea rebum. Stet clita kasd
-        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    <hr class="hr">
-    <h1 id="about" class="about center color-white">Links</h1>
-    <a class="center btn" href="#" id="link-discord">Join my Discord</a>
-    <a class="center btn" href="#" id="link-arda">Stuff made by Arda</a>
-    <a class="center btn" href="#" id="link-N/A">N/A</a>
-    <hr class="hr">
-    <h1 id="about" class="about center color-white">About</h1>
-    <hr class="hr">
-    <p class="color-white center">Lorem ipsum dolor sit amet, consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. Lorem ipsum
-        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-        duo dolores et ea rebum. Stet clita kasd
-        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    <hr class="hr">
-    <div id="snackbar"><a style="color: rgb(0, 255, 0); font-weight: bold;">NEW</a> | Cookie Clicker | <a style="color: red; font-weight: bold;" id="link-popup" href="#">[Click to Play]</a></div>
-    <footer>
-        <p class="center">© 2022 laser Inc.</p>
-    </footer>
-    <a class="back-to-top hidden" onclick="scrollToTop()">↑</a>
+    <div id="cookie-display"></div>
 </body>
-<!--<div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>-->
-<script src="./src/js/main/script.js"></script>
-<script src="./src/js/script/download.js"></script>
-<script src="./src/js/script/links.js"></script>
 
-<!-- TOAST -->
-<script>
-    function toast() {
-        var x = document.getElementById("snackbar");
-        x.className = "show";
-        setTimeout(function () { x.className = x.className.replace("show", ""); }, 10000);
-    }
-</script>
 </html>
+<script src="./script.js">
+</script>
