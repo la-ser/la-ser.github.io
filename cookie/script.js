@@ -1,3 +1,6 @@
+var version = "3.0"
+document.getElementById('version').innerHTML = "V"+version;
+
 /* COOKIES */
 let usernameSAVED = getCookie("username");
 let clicksSAVED = getCookie("clicksSAVED");
@@ -34,7 +37,22 @@ function reset() {
     onClick()
 }
 
+function updateVersion() {
+    setCookie("currentversion", version);
+    alert("Version updated! | "+ version)
+    location.reload();
+}
+
 function loadChecks() {
+    /* VERSION */
+    currentversion = getCookie("currentversion");
+    if (version != currentversion) {
+        console.log("Version: OLD / loading new one")
+        updateVersion()
+    } else {
+        console.log("Version: Up to date!")
+    }
+
     /* load stats */
     clicks = getCookie("clicks");
     console.log(clicks + " clicks loaded")
