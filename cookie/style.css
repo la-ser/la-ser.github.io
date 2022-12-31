@@ -70,7 +70,7 @@ body {
 
 @media (max-width: 800px) {
     body {
-        background-color: red;
+        /* background-color: red; */
     }
 
     #cookie-display {
@@ -93,7 +93,7 @@ body {
 
 @media (max-width: 500px) {
     body {
-        background-color: blue;
+        /* background-color: blue; */
     }
 
     #cookie-display {
