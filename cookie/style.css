@@ -112,6 +112,10 @@ body {
         margin-right: 0px;
         margin-top: -5px;
     }
+
+    #auto-upgrade {
+        margin-top: 100px;
+    }
 }
 
 #upgrade-clicks {
@@ -120,6 +124,7 @@ body {
     align-items: center;
     font-weight: bold;
     color: white;
+    background-color: transparent;
 }
 
 #auto-upgrade {
