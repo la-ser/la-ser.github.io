@@ -1,4 +1,4 @@
-var version = "2.3"
+var version = "2.4"
 document.getElementById('version').innerHTML = "V"+version;
 
 /* COOKIES */
@@ -8,11 +8,16 @@ let perClickSAVED = getCookie("perClickSAVED");
 let perClickUpgradeCostSAVED = getCookie("perClickUpgradeCostSAVED");
 let autoUpgradeClicksSAVED = getCookie("autoUpgradeClicksSAVED");
 
-var clicks = 0;
-var perClick = 1;
-var perClickUpgradeCost = 10;
+var clicksVAR = 0;
+var perClickVAR = 1;
+var perClickUpgradeCostVAR = 10;
+var autoUpgradeClicksVAR = "off";
+
+var clicks = clicksVAR;
+var perClick = perClickVAR;
+var perClickUpgradeCost = perClickUpgradeCostVAR;
 var perClickDiv = document.getElementById('per-click');
-var autoUpgradeClicks = "off";
+var autoUpgradeClicks = autoUpgradeClicksVAR;
 
 var username = null;
 
@@ -28,10 +33,10 @@ clicker.onclick = function () {
 };
 
 function reset() {
-    clicks = 0;
-    perClick = 1;
-    perClickUpgradeCost = 10;
-    autoUpgradeClicks = "off";
+    clicks = clicksVAR;
+    perClick = perClickVAR;
+    perClickUpgradeCost = perClickUpgradeCostVAR;
+    autoUpgradeClicks = autoUpgradeClicksVAR;
 
     clicker.innerHTML = clicks;
     onClick()
@@ -39,13 +44,15 @@ function reset() {
 
 function updateVersion() {
     setCookie("currentversion", version);
-    alert("Version updated! | "+ version)
-    if (perClickUpgradeCost < 1 || perClick < 1) {
-        reset();
-    }
+    alert("Version updated! | " + version)
 }
 
 function loadChecks() {
+    /* no data bug */
+    if (perClickUpgradeCost < 1 || perClick < 1) {
+        reset();
+    }
+
     /* VERSION */
     currentversion = getCookie("currentversion");
     if (version != currentversion) {
