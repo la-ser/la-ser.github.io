@@ -114,7 +114,8 @@ body {
     }
 
     #auto-upgrade {
-        margin-top: 100px;
+        position: absolute;
+        margin-top: 40%;
     }
 }
 
