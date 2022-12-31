@@ -1,31 +1,82 @@
+/* COOKIES */
+let usernameSAVED = getCookie("username");
+let clicksSAVED = getCookie("clicksSAVED");
+let perClickSAVED = getCookie("perClickSAVED");
+let perClickUpgradeCostSAVED = getCookie("perClickUpgradeCostSAVED");
+let autoUpgradeClicksSAVED = getCookie("autoUpgradeClicksSAVED");
+
+var clicks = 0;
 var perClick = 1;
 var perClickUpgradeCost = 10;
 var perClickDiv = document.getElementById('per-click');
+var autoUpgradeClicks = "off";
 
 var username = null;
-var autoUpgradeClicks = false;
 
 var autoUpgradeCheckBox = document.getElementById("auto-upgrade");
 
 var cookieDISPLAY = document.getElementById('cookie-disply');
-var cookieDATA = document.createElement('div');
-cookieDATA.innerHTML = '<button id="cookie">0</button>';
-cookieDATA.style.position = 'absolute';
-cookieDATA.style.top = '50%';
-cookieDATA.style.left = '50%';
-cookieDATA.style.transform = 'translate(-50%, -50%)';
-cookieDATA.style.zIndex = '1'
-document.body.appendChild(cookieDATA);
-var clicks = 0;
 clicks = Math.round(clicks)
 var clicker = document.getElementById('cookie-display');
 clicker.onclick = function () {
     clicks = clicks + perClick;
-    var clickerDisplay = document.getElementById('cookie');
-    clickerDisplay.innerHTML = clicks;
 
-    clicker.innerHTML = clickerDisplay.innerHTML
+    clicker.innerHTML = clicks;
 };
+
+function reset() {
+    clicks = 0;
+    perClick = 1;
+    perClickUpgradeCost = 10;
+    autoUpgradeClicks = "off";
+
+    clicker.innerHTML = clicks;
+    onClick()
+}
+
+function loadChecks() {
+    /* load stats */
+    clicks = getCookie("clicks");
+    console.log(clicks + " clicks loaded")
+    clicks = Math.floor(clicks);
+    clicker.innerHTML = clicks;
+
+    perClickUpgradeCost = getCookie("perClickUpgradeCost");
+    console.log(perClickUpgradeCost + " upgrade cost loaded")
+    perClickUpgradeCost = Math.floor(perClickUpgradeCost);
+    onClick()
+
+    perClick = getCookie("perClick");
+    console.log(perClick + " per click loaded")
+    perClick = Math.floor(perClick);
+    onClick()
+
+    autoUpgradeClicks = autoUpgradeClicksSAVED
+    if (autoUpgradeClicks == "on") {
+        autoUpgradeCheckBox.click();
+    } else if (autoUpgradeClicks == "off") {
+        return;
+    }
+}
+
+function onClick() {
+    /* set stats */
+    setCookie("clicks", clicks);
+    setCookie("perClickUpgradeCost", perClickUpgradeCost);
+    setCookie("perClick", perClick);
+
+    /* Set Text */
+    perClickUpgradeCost = Math.round(perClickUpgradeCost)
+    if (username != "" && username != null) {
+        perClickDiv.innerHTML = username + ", you need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+    } else {
+        perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+    }
+
+    if (autoUpgradeCheckBox.checked === true) {
+        upgradeClicks()
+    } else return;
+}
 
 /* COOKIES */
 function setCookie(cname, cvalue) {
@@ -47,19 +98,8 @@ function getCookie(cname) {
     }
     return "";
 }
-
 function checkCookie() {
-    var cookieDISPLAY = document.getElementById('cookie-display');
-    var clicker = document.getElementById('cookie');
-    // clicks = clicker.innerHTML;
-    // clicks = Math.floor(clicks);
-
-    let usernameSAVED = getCookie("username");
-    let clicksSAVED = getCookie("clicks");
-    let perClickSAVED = getCookie("perClick");
-    let autoUpgradeClicksSAVED = getCookie("autoUpgradeClicksSAVED");
-    let perClickUpgradeCostSAVED = getCookie("perClickUpgradeCost");
-    if (clicksSAVED != "") {
+    if (clicksSAVED != "" && clicksSAVED != null) {
         username = usernameSAVED;
         alert(username + " | Your Cookies: " + clicksSAVED + "/" + perClickSAVED);
         clicks = clicksSAVED;
@@ -69,20 +109,11 @@ function checkCookie() {
         perClickUpgradeCost = perClickUpgradeCostSAVED;
         perClickUpgradeCost = Math.floor(perClickUpgradeCost);
 
-        autoUpgradeClicks = autoUpgradeClicksSAVED;
-
-        if (autoUpgradeClicks = true) {
-            autoUpgradeCheckBox.click();
-        } else {
-            alert("Not Checked")
-        }
-
-        clicker.innerHTML = clicks;
         cookieDISPLAY.innerHTML = clicks;
     } else {
         clicksSAVED = prompt("Please enter your Cookies:", clicks);
         if (clicksSAVED != "" && clicksSAVED != null) {
-            setCookie("clicks", clicksSAVED);
+            setCookie("clicksSAVED", clicksSAVED);
             clicks = clicksSAVED;
             saveClicks();
             checkCookie();
@@ -91,7 +122,6 @@ function checkCookie() {
 }
 
 function deleteCookies() {
-    username = null;
     document.cookie = "clicks=;";
     alert("Your saved cookies got deleted.")
 }
@@ -109,15 +139,9 @@ function saveClicks() {
 
         clicks = Math.floor(clicks);
         alert("Cookies saved: " + clicks + " [One Click:" + perClick + "]")
-        setCookie("clicks", clicks);
-        setCookie("perClick", perClick);
-        setCookie("perClickUpgradeCost", perClickUpgradeCost);
-
-        if (autoUpgradeCheckBox.checked) {
-            setCookie("autoUpgradeClicksSAVED", true);
-        } else {
-            setCookie("autoUpgradeClicksSAVED", false);
-        }
+        setCookie("clicksSAVED", clicks);
+        setCookie("perClickSAVED", perClick);
+        setCookie("perClickUpgradeCostSAVED", perClickUpgradeCost);
     }
     // }
 }
@@ -135,16 +159,14 @@ function upgradeClicks() {
     }
 };
 
-function onClick() {
-    /* Set Text */
-    perClickUpgradeCost = Math.round(perClickUpgradeCost)
-    if (username != "" && username != null) {
-        perClickDiv.innerHTML = username + ", you need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+function autoUpgradeClicksCheckBox(checkBox) {
+    if (checkBox.checked) {
+        autoUpgradeClicks = "on";
+        console.log("AutoUpgradeClicks: " + autoUpgradeClicks)
+        setCookie("autoUpgradeClicksSAVED", autoUpgradeClicks);
     } else {
-        perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+        autoUpgradeClicks = "off";
+        console.log("AutoUpgradeClicks: " + autoUpgradeClicks)
+        setCookie("autoUpgradeClicksSAVED", autoUpgradeClicks);
     }
-
-    if (autoUpgradeCheckBox.checked) {
-        upgradeClicks()
-    } else return;
 }
