@@ -50,17 +50,23 @@ function checkCookie() {
     clicks = Math.floor(clicks);
 
     let clicksSAVED = getCookie("clicks");
+    let perClickSAVED = getCookie("perClick");
+    let perClickUpgradeCostSAVED = getCookie("perClickUpgradeCost");
     if (clicksSAVED != "") {
-        alert("Save Loaded! | Your Cookies: " + clicksSAVED);
+        alert("Save Loaded! | Your Cookies: " + clicksSAVED + "/" + perClickSAVED);
         clicks = clicksSAVED;
         clicks = Math.floor(clicks);
+        perClick = perClickSAVED;
+        perClick = Math.floor(perClick);
+        perClickUpgradeCost = perClickUpgradeCostSAVED;
+        perClickUpgradeCost = Math.floor(perClickUpgradeCost);
 
         clicker.innerHTML = clicks;
         cookieDISPLAY.innerHTML = clicks;
     } else {
         clicksSAVED = prompt("Please enter your Cookies:", clicks);
         if (clicksSAVED != "" && clicksSAVED != null) {
-            setCookie("clicks", clicksSAVED, 30);
+            setCookie("clicks", clicksSAVED);
             clicks = clicksSAVED;
             saveClicks()
             checkCookie();
@@ -75,19 +81,21 @@ function deleteCookies() {
 
 function saveClicks() {
     clicks = Math.floor(clicks);
-    alert("Cookies saved: " + clicks)
-    setCookie("clicks", clicks, 30);
+    alert("Cookies saved: " + clicks + " [One Click:" + perClick + "]")
+    setCookie("clicks", clicks);
+    setCookie("perClick", perClick);
+    setCookie("perClickUpgradeCost", perClickUpgradeCost);
 }
 
 function upgradeClicks() {
     if (clicks >= perClickUpgradeCost) {
         perClick++;
-        perClickDiv.innerHTML = perClick + " per Click"
+        // perClickDiv.innerHTML = perClick + " per Click"
         clicks = clicks - perClickUpgradeCost
         clicker.innerHTML = clicks;
 
         perClickUpgradeCost = Math.round(perClickUpgradeCost)
-        perClickUpgradeCostHALF = perClickUpgradeCost / 2.5;
+        perClickUpgradeCostHALF = perClickUpgradeCost / 2;
         perClickUpgradeCost = perClickUpgradeCost + perClickUpgradeCostHALF;
     }
 };
@@ -95,7 +103,7 @@ function upgradeClicks() {
 function onClick() {
     /* Set Text */
     perClickUpgradeCost = Math.round(perClickUpgradeCost)
-    perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!"
+    perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
 
     var autoUpgradeCheckBox = document.getElementById("auto-upgrade");
     
