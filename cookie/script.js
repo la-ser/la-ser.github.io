@@ -2,6 +2,11 @@ var perClick = 1;
 var perClickUpgradeCost = 10;
 var perClickDiv = document.getElementById('per-click');
 
+var username = null;
+var autoUpgradeClicks = false;
+
+var autoUpgradeCheckBox = document.getElementById("auto-upgrade");
+
 var cookieDISPLAY = document.getElementById('cookie-disply');
 var cookieDATA = document.createElement('div');
 cookieDATA.innerHTML = '<button id="cookie">0</button>';
@@ -46,20 +51,31 @@ function getCookie(cname) {
 function checkCookie() {
     var cookieDISPLAY = document.getElementById('cookie-display');
     var clicker = document.getElementById('cookie');
-    clicks = clicker.innerHTML;
-    clicks = Math.floor(clicks);
+    // clicks = clicker.innerHTML;
+    // clicks = Math.floor(clicks);
 
+    let usernameSAVED = getCookie("username");
     let clicksSAVED = getCookie("clicks");
     let perClickSAVED = getCookie("perClick");
+    let autoUpgradeClicksSAVED = getCookie("autoUpgradeClicksSAVED");
     let perClickUpgradeCostSAVED = getCookie("perClickUpgradeCost");
     if (clicksSAVED != "") {
-        alert("Save Loaded! | Your Cookies: " + clicksSAVED + "/" + perClickSAVED);
+        username = usernameSAVED;
+        alert(username + " | Your Cookies: " + clicksSAVED + "/" + perClickSAVED);
         clicks = clicksSAVED;
         clicks = Math.floor(clicks);
         perClick = perClickSAVED;
         perClick = Math.floor(perClick);
         perClickUpgradeCost = perClickUpgradeCostSAVED;
         perClickUpgradeCost = Math.floor(perClickUpgradeCost);
+
+        autoUpgradeClicks = autoUpgradeClicksSAVED;
+
+        if (autoUpgradeClicks = true) {
+            autoUpgradeCheckBox.click();
+        } else {
+            alert("Not Checked")
+        }
 
         clicker.innerHTML = clicks;
         cookieDISPLAY.innerHTML = clicks;
@@ -68,23 +84,42 @@ function checkCookie() {
         if (clicksSAVED != "" && clicksSAVED != null) {
             setCookie("clicks", clicksSAVED);
             clicks = clicksSAVED;
-            saveClicks()
+            saveClicks();
             checkCookie();
         }
     }
 }
 
 function deleteCookies() {
+    username = null;
     document.cookie = "clicks=;";
     alert("Your saved cookies got deleted.")
 }
 
 function saveClicks() {
-    clicks = Math.floor(clicks);
-    alert("Cookies saved: " + clicks + " [One Click:" + perClick + "]")
-    setCookie("clicks", clicks);
-    setCookie("perClick", perClick);
-    setCookie("perClickUpgradeCost", perClickUpgradeCost);
+    /* SET USERNAME */
+    let usernameSAVED = getCookie("username");
+    // if (username != "" && username != null) {
+    //     alert(username)
+    // } else {
+    usernameSAVED = prompt("Please enter your Name", "");
+    if (usernameSAVED != "" && usernameSAVED != null) {
+        username = usernameSAVED;
+        setCookie("username", usernameSAVED);
+
+        clicks = Math.floor(clicks);
+        alert("Cookies saved: " + clicks + " [One Click:" + perClick + "]")
+        setCookie("clicks", clicks);
+        setCookie("perClick", perClick);
+        setCookie("perClickUpgradeCost", perClickUpgradeCost);
+
+        if (autoUpgradeCheckBox.checked) {
+            setCookie("autoUpgradeClicksSAVED", true);
+        } else {
+            setCookie("autoUpgradeClicksSAVED", false);
+        }
+    }
+    // }
 }
 
 function upgradeClicks() {
@@ -103,10 +138,12 @@ function upgradeClicks() {
 function onClick() {
     /* Set Text */
     perClickUpgradeCost = Math.round(perClickUpgradeCost)
-    perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+    if (username != "" && username != null) {
+        perClickDiv.innerHTML = username + ", you need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+    } else {
+        perClickDiv.innerHTML = "You need " + perClickUpgradeCost + " cookies!" + " [One Click: " + perClick + "]"
+    }
 
-    var autoUpgradeCheckBox = document.getElementById("auto-upgrade");
-    
     if (autoUpgradeCheckBox.checked) {
         upgradeClicks()
     } else return;
