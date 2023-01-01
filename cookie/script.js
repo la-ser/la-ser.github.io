@@ -147,7 +147,7 @@ function checkCookie() {
         //     saveClicks();
         //     checkCookie();
         // }
-        return;
+        alert("No saved data found!")
     }
 }
 
