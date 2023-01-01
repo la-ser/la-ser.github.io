@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>laser Inc. | Cookies</title>
+</head>
+<style>
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+</style>
+
+<body onload="loadChecks()" onclick="onClick()">
+    <!-- <button onclick="test()">remove</button>
+    <button onclick="resetStats()">reset</button> -->
+    <div class="buttons">
+        <button class="btn btn-delete" onclick="deleteCookies(),resetStats()">Delete Data</button>
+        <button class="btn btn-save" onclick="saveClicks()">Save Data</button>
+        <button class="btn btn-load" onclick="checkCookie()">Load Data</button>
+        <a id="per-click"></a>
+        <div id="upgrade">
+            <input type="checkbox" id="auto-upgrade-clicks" onclick="autoUpgradeClicksCheckBox(this)">
+            <button id="upgrade-clicks" onclick="upgradeClicks()">UPGRADE</button>
+        </div>
+    </div>
+    <div id="cookie-display" tabindex="0"></div>
+    <a id="version"></a>
+</body>
+
+</html>
+<script src="./script.js">
+</script>
