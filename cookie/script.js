@@ -1,4 +1,4 @@
-var version = "2.5"
+var version = "2.6"
 document.getElementById('version').innerHTML = "V" + version;
 
 /* COOKIES */
