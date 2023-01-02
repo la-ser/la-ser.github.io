@@ -76,6 +76,9 @@ body {
     #cookie-display:hover {
         zoom: 1;
     }
+    #cookie-display:active {
+        zoom: 1.1;
+    }
 }
 
 @media (max-width: 800px) {
