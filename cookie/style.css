@@ -71,6 +71,13 @@ body {
     background-color: rgb(0, 110, 255)
 }
 
+/* EVERY MOBILE DEVICE */
+@media (pointer:coarse) {
+    #cookie-display:hover {
+        zoom: 1;
+    }
+}
+
 @media (max-width: 800px) {
     body {
         /* background-color: red; */
