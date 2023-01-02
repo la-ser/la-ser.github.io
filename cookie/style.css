@@ -26,6 +26,7 @@ body {
     z-index: 2;
     text-align: center;
     background-color: transparent;
+    transition: 0s;
 }
 
 #cookie-display:hover {
@@ -73,11 +74,17 @@ body {
 
 /* EVERY MOBILE DEVICE */
 @media (pointer:coarse) {
+    #cookie-display {
+        transition: 0s;
+        zoom: 1;
+    }
     #cookie-display:hover {
+        transition: 0s;
         zoom: 1;
     }
     #cookie-display:active {
-        zoom: 1.1;
+        zoom: 1.05;
+        transition: 0s;
     }
 }
 
@@ -196,6 +203,6 @@ body {
     bottom: 0;
     right: 0;
     position: absolute;
-    color: red;
+    color: white;
     font-weight: bold;
 }
