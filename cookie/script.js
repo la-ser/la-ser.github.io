@@ -202,7 +202,7 @@ function upgradeClicks() {
 
         clicker.innerHTML = clicks;
         perClickUpgradeCost = Math.round(perClickUpgradeCost)
-        perClickUpgradeCostHALF = perClickUpgradeCost / 2;
+        perClickUpgradeCostHALF = perClickUpgradeCost / 1.5;
         perClickUpgradeCost = perClickUpgradeCost + perClickUpgradeCostHALF;
         setText();
     }
