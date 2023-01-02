@@ -34,7 +34,7 @@ body {
 }
 
 #cookie-display:active {
-    transition: 0.5s;
+    transition: 0s;
     zoom: 1.1;
 }
 
