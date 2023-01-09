@@ -12,7 +12,6 @@
     <title>laser Inc. | Home</title>
 </head>
 <style>
-
     *:focus {
         outline: none;
     }
@@ -23,8 +22,8 @@
         }
     }*/
 
-     /* TOAST */
-     #snackbar {
+    /* TOAST */
+    #snackbar {
         visibility: hidden;
         min-width: 250px;
         margin-left: -125px;
@@ -67,9 +66,10 @@
         <a href="#qr-code">QR-Code</a>-->
     </div>
     <div class="header">
-        <a onclick="openNav()" class="logo"><span onclick="openNav()">☰
+        <a onclick="openNav()"class="logo"><span>☰
                 laser Inc.</span></a>
         <div class="header-right">
+            <a href="./cookie/">🍪</a>
             <!--<a href="#mobile" class="mobile">Mobile</a>-->
             <a href="#desktop" class="desktop icon">🖥️</a>
             <a href="#more" class="icon">&#x1F4C1;</a>
@@ -81,16 +81,20 @@
 
     <center>
         <div id="download-hide" class="hide">
-        <select multiple class="files-select" id="files-select">
-            <option id="download-1" value="https://www.dropbox.com/s/c3aw8a1mijwm25k/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">Normal Datapack</option>
-            <option id="download-2" value="https://www.dropbox.com/s/lrho7stm54bht1i/laser%20DP%20-%20TEMPLATE%201.19.2%20-%20EMPTY.zip?dl=1">Empty Datapack</option>
-            <option id="download-3" value="">N/A</option>
-            <option id="download-4" value="">N/A</option>
-            <option id="download-5" value="">N/A</option>
-        </select>
-        <!-- Add a download button to start the download -->
-        <a href="#" class="download-button" id="download-button">Download</a>
-    </div>
+            <select multiple class="files-select" id="files-select">
+                <option id="download-1"
+                    value="https://www.dropbox.com/s/c3aw8a1mijwm25k/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">Normal
+                    Datapack</option>
+                <option id="download-2"
+                    value="https://www.dropbox.com/s/lrho7stm54bht1i/laser%20DP%20-%20TEMPLATE%201.19.2%20-%20EMPTY.zip?dl=1">
+                    Empty Datapack</option>
+                <option id="download-3" value="">N/A</option>
+                <option id="download-4" value="">N/A</option>
+                <option id="download-5" value="">N/A</option>
+            </select>
+            <!-- Add a download button to start the download -->
+            <a href="#" class="download-button" id="download-button">Download</a>
+        </div>
     </center>
 
     <hr class="hr" onclick="show()">
@@ -149,7 +153,7 @@
     </footer>
     <a class="back-to-top hidden" onclick="scrollToTop()">↑</a>
 </body>
-<!--<div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>-->
+<div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>
 <script src="./src/js/main/script.js"></script>
 <script src="./src/js/script/download.js"></script>
 <script src="./src/js/script/links.js"></script>
@@ -162,4 +166,5 @@
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 10000);
     }
 </script> -->
+
 </html>
