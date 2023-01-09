@@ -1,4 +1,6 @@
 body {
+    padding: 0;
+    margin: 0;
     background-color: #36393F;
     user-select: none;
 }
@@ -78,10 +80,12 @@ body {
         transition: 0s;
         zoom: 1;
     }
+
     #cookie-display:hover {
         transition: 0s;
         zoom: 1;
     }
+
     #cookie-display:active {
         zoom: 1.05;
         transition: 0s;
@@ -205,4 +209,17 @@ body {
     position: absolute;
     color: white;
     font-weight: bold;
+}
+
+.back {
+    margin: 0;
+    background-color: gray;
+    color: white;
+    font-family: monospace;
+    text-transform: uppercase;
+    padding: 3px;
+}
+
+.back:hover {
+    cursor: pointer;
 }
