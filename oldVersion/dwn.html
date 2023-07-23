@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://la-ser.github.io/src/css/all.css">
+    <title>Download - Copy | laser Inc.</title>
+</head>
+<style>
+    input.copyText {
+        width: 50%;
+        background-color: darkgray;
+        border: none;
+        border-radius: 3px;
+    }
+
+    button.copyText {
+        background-color: gray;
+        border: none;
+        border-radius: 3px;
+    }
+
+    .centerText {
+        text-align: center;
+    }
+
+    hr {
+        width: 75%;
+        color: white;
+    }
+</style>
+
+<body>
+    <a class="center btn"
+        href="https://www.dropbox.com/s/xgsr14crkul86ku/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">DOWNLOAD MC
+        DATAPACK 1.19.2 [TEMPLATE]</a>
+    <hr>
+    <div class="centerText">
+        <input class="copyText" type="text" value="minecraft:bedrock,119*minecraft:yellow_terracotta;minecraft:the_void"
+            id="copy1">
+        <button class="copyText" onclick="copyText1()">Copy text</button>
+        <script>function copyText1() { var copyText = document.getElementById("copy1"); copyText.select(); copyText.setSelectionRange(0, 99999); navigator.clipboard.writeText(copyText.value); }</script>
+    </div>
+    <hr>
+    <div class="centerText">
+        <input class="copyText" type="text" value="N/A" id="copy2">
+        <button class="copyText" onclick="copyText2()">Copy text</button>
+        <script>function copyText2() { var copyText = document.getElementById("copy2"); copyText.select(); copyText.setSelectionRange(0, 99999); navigator.clipboard.writeText(copyText.value); }</script>
+    </div>
+
+</body>
+
+</html>

@@ -1,32 +1,29 @@
 :root {
-    --bg-color: rgb(75, 75, 75);
-    --darkMode: rgb(37, 37, 37);
-    
-    --scroll-color: rgb(46, 46, 46);
+    --bg-color: rgb(75, 75, 75, 0.5);
+    --scroll-color: rgb(46, 46, 46, 0.5);
 
-    --header-bg: rgb(58, 58, 58);
-    --header-side-bg: rgb(58, 58, 58);
-    --header-side-right: rgb(43, 43, 43);
-    --header-hover-bg: rgb(75, 75, 75);
-    --header-hover-color: rgb(44, 44, 44);
+    --header-bg: rgba(58, 58, 58, 0.5);
+    --header-side-bg: rgb(58, 58, 58, 0.5);
+    --header-side-right: rgb(43, 43, 43, 0.5);
+    --header-hover-bg: rgb(75, 75, 75, 0.5);
+    --header-hover-color: rgb(44, 44, 44, 0.5);
 
     --hr-color: white;
 
     --scrollToTop-bg: gray;
 
     --footer-color: white;
-    --footer-bg: rgb(58, 58, 58);
+    --footer-bg: rgba(58, 58, 58, 0.5);
 
-    --btn-bg: rgb(94, 94, 94);
-    --btn-bg-hover: rgb(97, 97, 97);
+    --btn-bg: rgba(94, 94, 94, 0.5);
+    --btn-bg-hover: rgb(97, 97, 97, 0.5);
 
-    --mobile-bg-color: rgb(75, 75, 75);
-    --mobile-darkMode: rgb(37, 37, 37);
-    --mobile-header-bg: rgb(58, 58, 58);
-    --mobile-header-side-bg: rgb(58, 58, 58);
-    --mobile-btn-bg: rgb(37, 37, 37);
-    --mobile-btn-bg-hover: rgb(49, 49, 49);
-    --mobile-footer-bg: rgb(58, 58, 58);
+    --mobile-bg-color: var(--bg-color);
+    --mobile-header-bg: var(--header-bg);
+    --mobile-header-side-bg: var(--header-side-bg);
+    --mobile-btn-bg: var(--btn-bg);
+    --mobile-btn-bg-hover: var(--btn-bg-hover);
+    --mobile-footer-bg: var(--footer-bg);
 }
 
 /* GRAY FILTER */
@@ -34,22 +31,4 @@
 .icon {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
-}
-
-.dwn-btn {
-    background-color: rgb(190, 190, 190);
-    padding: 10px 25%;
-    margin-top: 10px;
-    font-family: serif;
-    font-size: 200%;
-    color: rgb(77, 77, 77)
-}
-
-.dwn-btn:hover {
-    background-color: rgba(190, 190, 190, 0.75);
-    padding: 10px 25%;
-    margin-top: 10px;
-    font-family: serif;
-    font-size: 200%;
-    color: white;
 }

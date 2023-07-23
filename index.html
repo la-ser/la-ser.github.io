@@ -6,165 +6,187 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
             user-scalable=0">
-    <link rel="icon" href="https://la-ser.github.io/src/icons/L.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./src/css/all.css">
-
-    <title>laser Inc. | Home</title>
+    <link rel="icon" href="src/logo_small.png" image/x-icon">
+    <!-- <link rel="stylesheet" href="./src/css/all.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="background/website.png">
+    <link rel="preload" as="image" href="background/website_light.png">
+    <title>laser Inc.</title>
 </head>
 <style>
-    *:focus {
-        outline: none;
+    html {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
     }
 
-    /*@media only screen and (orientation: landscape) {
+    body {
+        background-color: rgb(31, 31, 31);
+        padding: 0;
+        margin: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("./background/website.png");
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+        user-select: none;
+        transition: background-image 0.5s;
+        transition: 0.3s;
+    }
+
+    body.lightmode {
+        background-color: rgb(31, 31, 31);
+        background-image: url("./background/website_light.png");
+        transition: 0.3s;
+    }
+
+    div.header.lightmode {
+        background-color: rgba(196, 196, 196, 0.4);
+        box-shadow: rgba(177, 177, 177, 0.1);
+        transition: 0.3s;
+    }
+
+    #header div a.lightmode {
+        color: rgb(31, 31, 31);
+        text-shadow: white;
+        transition: 0.5s;
+    }
+
+    /* @media screen and (max-width: 700px) {
         body {
-            background-color: rgb(76, 129, 226);
+            background-image: none;
+            background-color: rgb(9, 78, 46);
         }
-    }*/
-
-    /* TOAST */
-    #snackbar {
-        visibility: hidden;
-        min-width: 250px;
-        margin-left: -125px;
-        background-color: rgba(36, 36, 36, 0.75);
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-        padding: 12px;
-        position: fixed;
-        z-index: 1;
-        left: 50%;
-        bottom: 15px;
-        font-size: 17px;
-    }
-
-    #snackbar.show {
-        visibility: visible;
-        -webkit-animation: fadein 1s, fadeout 1s 1.5s;
-        animation: fadein 1s, fadeout 1s 1.5s;
-    }
+    } */
 </style>
 
-<body onload="loadlinks(),toast()">
-
-    <div id="sidenav-div" class="sidenav">
-        <a class="closebtn" onclick="closeNav()"></a>
-        <!--<hr class="hr">
-        <a href="#more">More</a>
-        <hr class="hr">
-        <a href="#about">About</a>
-        <hr class="hr">
-        <a class="sec">Pages</a>
-        <hr class="hr">
-        <a href="#download">Download</a>
-        <hr class="hr">
-        <a href="https://la-ser.github.io/old/codeEditor/newest">codeEditor</a>
-        <hr class="hr">
-        <a href="#pswGen">passwordGen</a>
-        <hr class="hr">
-        <a href="#qr-code">QR-Code</a>-->
+<body onload="closeNav(), closeNavLeft()">
+    <div id="nav-menu" class="overlay">
+        <a draggable="false" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="overlay-content" class="overlay-content">
+            <div class="container-icon">
+                <a draggable="false" id="luxury-district" class="hover-img" data-bg-pix="true"
+                    data-bg="./background/unknown_games.png" href="https://unknown-clan.github.io/">
+                    <div id="version">
+                        <img style="image-rendering: pixelated; border-radius: 50px;" draggable="false" class="icon"
+                            src="src/icons/unknown_games.png" alt="Icon">
+                        <span class="text">Unknown Game</span>
+                    </div>
+                </a>
+                <a draggable="false" id="luxury-district" class="hover-img" data-bg="./background/new_palms.png"
+                    href="https://lsr-games.github.io/newpalms/">
+                    <div id="version">
+                        <img draggable="false" class="icon" src="src/icons/new_palms.png" alt="Icon">
+                        <span class="text">New Palms</span>
+                    </div>
+                </a>
+                <a draggable="false" id="luxury-district" class="hover-img" data-bg="./background/nycrc.png"
+                    href="https://nyc-roleplay.github.io/">
+                    <div id="version">
+                        <img draggable="false" class="icon" src="src/icons/nycrc.png" alt="Icon">
+                        <span class="text">NYCRC</span>
+                    </div>
+                </a>
+                <!-- <ul id="version-list"></ul> -->
+            </div>
+        </div>
     </div>
-    <div class="header">
-        <a onclick="openNav()"class="logo"><span>☰
-                laser Inc.</span></a>
+    <div id="nav-menu-left" class="overlay-left">
+        <a draggable="false" href="javascript:void(0)" class="closebtn-left" onclick="closeNavLeft()">&times;</a>
+        <div id="overlay-content-left" class="overlay-content-left">
+            <div class="container-icon-left">
+                <a draggable="false" href="#about">
+                    <div id="links">
+                        <img draggable="false" class="icon" src="src/links/discord.png" alt="Icon">
+                        <span class="text-left">About me!</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header" id="header">
+        <div class="logo">
+            <a draggable="false" id="title" class="canbelightmode" href="#" onclick="openNavLeft()"></a>
+        </div>
         <div class="header-right">
-            <a href="./cookie/">🍪</a>
-            <!--<a href="#mobile" class="mobile">Mobile</a>-->
-            <a href="#desktop" class="desktop icon">🖥️</a>
-            <a href="#more" class="icon">&#x1F4C1;</a>
-            <a href="#about" class="icon">📙</a>
-            <a class="darkMode icon hidden" onclick="colorMode()">⚪</a>
-
+            <a draggable="false" class="switch-container">
+                <div class="switch" id="switch" onclick="darkmode()">
+                    <div class="switch-button" id="switch-button"></div>
+                </div>
+            </a>
+            <a draggable="false" onclick="openNav()" href="#" class="canbelightmode">Projects</a>
         </div>
     </div>
-
-    <center>
-        <div id="download-hide" class="hide">
-            <select multiple class="files-select" id="files-select">
-                <option id="download-1"
-                    value="https://www.dropbox.com/s/c3aw8a1mijwm25k/laser%20DP%20-%20TEMPLATE%201.19.2.zip?dl=1">Normal
-                    Datapack</option>
-                <option id="download-2"
-                    value="https://www.dropbox.com/s/lrho7stm54bht1i/laser%20DP%20-%20TEMPLATE%201.19.2%20-%20EMPTY.zip?dl=1">
-                    Empty Datapack</option>
-                <option id="download-3" value="">N/A</option>
-                <option id="download-4" value="">N/A</option>
-                <option id="download-5" value="">N/A</option>
-            </select>
-            <!-- Add a download button to start the download -->
-            <a href="#" class="download-button" id="download-button">Download</a>
-        </div>
-    </center>
-
-    <hr class="hr" onclick="show()">
-    <h1 id="home" class="color-white">— Home —</h1>
-    <!-- <hr class="hr">
-    <p class="color-white center">This web site is a project which I
-        continue to lead and maintain for educational reasons.
-        This website (with many other features) will be renewed and improved
-        from time to time.
-        With this project I would like to educate myself further and simply
-        try out everything that is possible for me with html, css and
-        javascript.</p>
-    <hr class="hr">
-    <a class="center btn" href="https://la-ser.github.io/old/codeEditor/newest">CODE-EDITOR</a> -->
-    <!--<div class="tooltip center color-darkgray text-bold bg-color-gray"
-        style="padding: 2px 5px 2px 5px; border-radius: 5px;">Preview
-        <iframe id="iframe" style="overflow: none;" width="800" height="600" class="center tooltiptext"
-            src="https://la-ser.github.io/placeholder"></iframe>
-    </div>-->
-    <hr class="hr">
-    <p class="color-white center">Lorem ipsum dolor sit amet, consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. Lorem ipsum
-        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-        duo dolores et ea rebum. Stet clita kasd
-        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    <hr class="hr">
-    <h1 id="about" class="about center color-white">Links</h1>
-    <a class="center btn" href="#" id="link-discord">Join my Discord</a>
-    <a class="center btn" href="#" id="link-cookie">Cookie Clicker | 🍪</a>
-    <a class="center btn" href="#" id="link-arda">Stuff made by Arda</a>
-    <a class="center btn" href="#" id="link-N/A">N/A</a>
-    <hr class="hr">
-    <h1 id="about" class="about center color-white">About</h1>
-    <hr class="hr">
-    <p class="color-white center">Lorem ipsum dolor sit amet, consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. Lorem ipsum
-        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-        duo dolores et ea rebum. Stet clita kasd
-        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    <hr class="hr">
-    <!-- <div id="snackbar"><a style="color: rgb(0, 255, 0); font-weight: bold;">NEW</a> | Cookie Clicker | <a style="color: red; font-weight: bold;" id="link-popup" href="#">[Click to Play]</a></div> -->
-    <footer>
-        <p class="center">© 2022 laser Inc.</p>
-    </footer>
-    <a class="back-to-top hidden" onclick="scrollToTop()">↑</a>
+    <!-- <div class="rest-body"></div> -->
+    <!-- <a draggable="false" class="title">Welcome</a> -->
+    <img draggable="false" src="src/logo_small.png" draggable="false" class="corner-logo canbelightmode"
+        id="corner-logo"></img>
+    <!-- <img draggable="false" src="https://minecraft.net//etc.clientlibs/minecraft/clientlibs/main/resources/favicon.ico" draggable="false" class="corner-logo"></img> -->
+    <!-- <a draggable="false" class="back-to-top hidden" onclick="scrollToTop()">↑</a> -->
 </body>
-<div onclick="closeNav()" id="sidenav-back" class="sidenav-back hidden"></div>
-<script src="./src/js/main/script.js"></script>
-<script src="./src/js/script/download.js"></script>
-<script src="./src/js/script/links.js"></script>
+<script src="script.js"></script>
+<script>
+    function openNav() {
+        document.getElementById("overlay-content").style.display = "";
+        document.getElementById("nav-menu").style.display = "";
 
-<!-- TOAST -->
-<!-- <script>
-    function toast() {
-        var x = document.getElementById("snackbar");
-        x.className = "show";
-        setTimeout(function () { x.className = x.className.replace("show", ""); }, 10000);
+        setTimeout(function () {
+            document.getElementById("nav-menu").classList.add('nav-width');
+        }, 100);
     }
-</script> -->
+
+    function closeNav() {
+        document.getElementById("overlay-content").style.display = "none";
+        document.getElementById("nav-menu").classList.remove('nav-width');
+
+        setTimeout(function () {
+            document.getElementById("nav-menu").style.display = "none";
+        }, 300);
+    }
+
+    function openNavLeft() {
+        document.getElementById("overlay-content-left").style.display = "";
+        document.getElementById("nav-menu-left").style.display = "";
+
+        setTimeout(function () {
+            document.getElementById("nav-menu-left").classList.add('nav-width');
+        }, 100);
+    }
+
+    function closeNavLeft() {
+        document.getElementById("overlay-content-left").style.display = "none";
+        document.getElementById("nav-menu-left").classList.remove('nav-width');
+
+        setTimeout(function () {
+            document.getElementById("nav-menu-left").style.display = "none";
+        }, 300);
+    }
+
+    function darkmode() {
+        document.body.classList.toggle('lightmode');
+        document.getElementById('header').classList.toggle('lightmode');
+        document.querySelectorAll(".canbelightmode").forEach((el) => {
+            el.classList.toggle('lightmode');
+        });
+
+        var button = document.getElementById("switch-button");
+        button.classList.toggle("switch-button-dark-mode");
+
+        var container = document.getElementById("switch");
+        container.classList.toggle("switch-dark-mode");
+
+        
+        var corner_logo = document.getElementById('corner-logo');
+        if (!document.body.classList.contains('lightmode')) {
+            corner_logo.setAttribute('src', 'src/logo_small.png');
+        } else {
+            corner_logo.setAttribute('src', 'src/logo.png');
+        }
+    }
+</script>
 
 </html>

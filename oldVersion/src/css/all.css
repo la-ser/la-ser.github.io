@@ -1,0 +1,17 @@
+/* IMPORT COLOR CSS FILE */
+@import url('main/color.css');
+/* IMPORT HEADER CSS FILE */
+@import url('main/header.css');
+/* IMPORT MAINSTYLE CSS FILE */
+@import url('main/style.css');
+/* IMPORT BORDER CSS FILE */
+@import url('styles/border.css');
+/* IMPORT BUTTON CSS FILE */
+@import url('styles/button.css');
+/* IMPORT TEXT CSS FILE */
+@import url('styles/text.css');
+/* IMPORT MOBILE CSS FILE */
+@import url('main/mobile.css');
+
+/* IMPORT DOWNLOAD CSS ASSETS */
+@import url('styles/download.css');

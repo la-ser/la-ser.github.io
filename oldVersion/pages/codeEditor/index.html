@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>htmlEditor v3 - laser Inc.</title>
+    <link rel="icon" href="https://la-ser.github.io/code/files/icons/edit.ico" type="image/x-icon">
+</head>
+
+<body onload="run()">
+    <iframe src="https://la-ser.github.io/code/files/codeEditorV3/headline.html" height="35px" width="100%"></iframe>
+    <div>
+        <input class="download" type="text" id="setName" placeholder="fileName.html" value="fileName.html" style="color: darkgray;">
+        <button class="download" onclick="downloadFile(setName.value)">Download</button>
+    </div>
+    <div class="input-field-1">
+        <textarea class="input1"
+            id="html-code">&lt!-- HTML Code --&gt
+
+&lth1&gtOUTPUT HERE&lt/h1&gt
+
+&lthr color=darkgray width=75%&gt
+
+&ltcenter&gt
+&ltinput class="test-button" type="button" value="Click me" onclick="myFunction()"&gt
+&lt/center&gt</textarea>
+    </div>
+    <div class="input-field-2">
+        <textarea class="input2" id="css-code">/* CSS Code */
+html { background-color: gray; }
+
+h1 { color: green; text-align: center; }
+
+.test-button { color: red; center; font-style: none; font-size: 130%; font-family: monospace; border-radius: 5px }</textarea>
+        <textarea class="input3" id="js-code">// JS Code
+function myFunction() {
+    alert("Hello World!")
+}</textarea>
+    </div>
+    <div class="output-field">
+        <iframe class="output" id="output"></iframe>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

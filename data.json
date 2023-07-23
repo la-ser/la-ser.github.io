@@ -1,0 +1,16 @@
+[
+  {
+    "id": "discord-opt",
+    "bg": "discord",
+    "download": "https://discord.gg/qWkPrf6N8P",
+    "icon": "discord",
+    "name": "Discord"
+  },
+  {
+    "id": "roblox-opt",
+    "bg": "roblox",
+    "download": "roblox://placeId=2534724415&launchData=%7B%22psCode%22%3A%22lsr%22%7D",
+    "icon": "roblox",
+    "name": "Roblox"
+  }
+]

@@ -2,13 +2,19 @@
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     background-color: var(--header-bg);
-    padding: 20px 10px;
+    padding: 1% 10px;
     position: sticky;
     top: 0;
     width: 100%;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
     z-index: 10;
+}
+
+.rest-body {
+    padding: 25% 10px;
+    background-color: rgba(255, 0, 0, 0.37);
+    background-color: transparent;
 }
 
 .header a {
@@ -26,15 +32,6 @@
     transition: 0.5s;
     transition: 0.5s;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-.header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.header a.logo:hover {
-    cursor: pointer;
 }
 
 .header a:hover {
@@ -64,156 +61,13 @@
         float: none;
     }
 
+    .logo {
+        font-size: 50%;
+    }
+
 }
 
 .hidden {
     transition: 1s;
     display: none;
-}
-
-.sidenav-back {
-    background-color: rgba(0, 0, 0, 0.3);
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 10;
-    transition: 0.5s;
-}
-
-.sidenav-back:hover {
-    background-color: transparent;
-    cursor: auto;
-    transition: 0.5s;
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--header-side-bg);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    border-right: solid var(--header-side-right) 2px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-    z-index: 11;
-    word-break: keep-all;
-    letter-spacing: -1px;
-}
-
-.sidenav a {
-    padding: 6px 6px 6px 60px;
-    text-decoration: none;
-    font-size: 30px;
-    color: gray;
-    display: block;
-    /*box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);*/
-    transition: 0.7s;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    opacity: 1;
-    word-break: keep-all;
-
-}
-
-.sidenav a:hover {
-    transition: 1s;
-    rotate: 1deg;
-    text-decoration: underline;
-}
-
-.sidenav hr {
-    width: 80%;
-    padding: 2px;
-    color: gray;
-    background-color: gray;
-    border: none;
-}
-
-/*.sidenav a.sec {
-    letter-spacing: 20px;
-    color: rgb(200, 200, 200);
-    padding-top: 0px;
-    padding-bottom: 0;
-}
-
-.sidenav a.sec:hover {
-    transition: 1s;
-    rotate: 0deg;
-    text-decoration: none;
-}*/
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 0px;
-    font-size: 36px;
-    margin-left: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    aspect-ratio: 0.5;
-    box-shadow: none;
-    background-color: transparent;
-    border-radius: 100%;
-    animation-name: spin-l;
-    animation-duration: 500ms;
-}
-
-.closebtn:after {
-    display: inline-block;
-    content: "\00d7";
-    /* This will render the 'X' */
-}
-
-.closebtn:hover {
-    cursor: pointer;
-    animation-name: spin-r;
-    animation-duration: 500ms;
-}
-
-@keyframes spin-r {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(90deg);
-    }
-}
-
-@keyframes spin-l {
-    from {
-        transform: rotate(90deg);
-    }
-
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-
-.darkMode {
-    background-color: rgb(85, 85, 85);
-    /*display: none;*/
-}
-
-.darkMode:hover {
-    cursor: pointer;
 }
